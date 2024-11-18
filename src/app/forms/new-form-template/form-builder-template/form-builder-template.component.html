@@ -1,0 +1,30 @@
+<div class="container">
+  <header>
+    <button (click)="addRow()">Add Row</button>
+  </header>
+  <div class="work-container">
+    <div class="sidebar">
+      <ul>
+        <li draggable="true" (dragstart)="drag($event, 'nf_input_text')">
+          Input
+        </li>
+        <li draggable="true" (dragstart)="drag($event, 'row')">Row</li>
+      </ul>
+    </div>
+    <div class="builder-area">
+      <ng-container #container> </ng-container>
+    </div>
+    <div class="panel" *ngIf="showPropertyPanel">
+      <app-input-property
+        *ngIf="selectedPropertyType == 'nf_input_text'"
+        [elementObj]="propertyDetailsData"
+        [formData]="data"
+      ></app-input-property>
+      <app-row-container-property
+        *ngIf="selectedPropertyType == 'row'"
+        [elementObj]="propertyDetailsData"
+        [formData]="data"
+      ></app-row-container-property>
+    </div>
+  </div>
+</div>

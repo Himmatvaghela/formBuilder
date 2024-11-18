@@ -1,0 +1,9 @@
+<div
+  class="container"
+  (drop)="drop($event)"
+  (dragover)="allowDrop($event)"
+  (click)="openPropertyPanel($event)"
+  [ngClass]="{ selected: isSelected }"
+>
+  <ng-container #container></ng-container>
+</div>

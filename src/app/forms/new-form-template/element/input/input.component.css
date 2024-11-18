@@ -1,0 +1,13 @@
+
+.selected {
+    border: 1px solid black;
+}
+
+.input-box{
+    width: 40%;
+}
+
+.input-box input{
+    width: 100%;
+    border: none;
+}

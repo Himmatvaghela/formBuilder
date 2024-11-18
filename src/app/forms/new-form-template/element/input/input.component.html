@@ -1,0 +1,7 @@
+<div
+  class="input-box"
+  (click)="openPropertyPanel($event)"
+  [ngClass]="{ selected: isSelected }"
+>
+  <input type="text" [placeholder]="elementObj.placeholder" />
+</div>
