@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8996" data-name="Group 8996" transform="translate(-122 -295)">
+    <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Icon_feather-file-plus" data-name="Icon feather-file-plus" transform="translate(130.2 305)">
+      <path id="Path_2537" data-name="Path 2537" d="M13.5,3h-6A1.5,1.5,0,0,0,6,4.5v12A1.5,1.5,0,0,0,7.5,18h9A1.5,1.5,0,0,0,18,16.5v-9Z" fill="#f2f1f1" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2538" data-name="Path 2538" d="M21,3V7.5h4.5" transform="translate(-7.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2539" data-name="Path 2539" d="M18,22.5V18" transform="translate(-6 -7.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2540" data-name="Path 2540" d="M13.5,22.5H18" transform="translate(-3.75 -9.75)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

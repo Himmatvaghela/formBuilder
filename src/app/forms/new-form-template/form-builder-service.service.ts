@@ -3,6 +3,7 @@ import { InputComponent } from './element/input/input.component';
 import { RowContainerComponent } from './element/row-container/row-container.component';
 import { GridData } from '../forms.dto';
 import { Subject } from 'rxjs';
+import { CheckBoxComponent } from './element/check-box/check-box.component';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,10 @@ export class FormBuilderServiceService {
     {
       name: 'row',
       component: RowContainerComponent,
+    },
+    {
+      name: 'nf_checkbox',
+      component: CheckBoxComponent,
     },
   ];
 

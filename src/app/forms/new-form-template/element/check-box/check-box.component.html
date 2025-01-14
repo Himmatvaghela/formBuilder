@@ -1,1 +1,21 @@
-<p>check-box works!</p>
+<div
+  class="checkbox-container"
+  (click)="openPropertyPanel($event)"
+  [ngClass]="{ selected: isSelected }"
+>
+  <ng-container *ngFor="let elem of elementObj.options_list">
+    <div class="checkbox_lable">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        name="checkbox{{ elementObj.elementId }}"
+      />
+      &nbsp;
+      <label
+        class="form-check-label inherit_style ms-1"
+        for="{{ elem[elementObj?.key_value] }}"
+        >{{ elem[elementObj?.display_value] }}</label
+      >
+    </div>
+  </ng-container>
+</div>

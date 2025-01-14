@@ -9,11 +9,13 @@ import {
 } from '@angular/core';
 import { rowContainer } from '../../forms.dto';
 import { FormBuilderServiceService } from '../form-builder-service.service';
+import { NgbNavConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-form-builder-template',
   templateUrl: './form-builder-template.component.html',
   styleUrls: ['./form-builder-template.component.css'],
+  providers: [NgbNavConfig],
 })
 export class FormBuilderTemplateComponent implements OnInit, OnChanges {
   constructor(
@@ -27,11 +29,18 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
   selectedPropertyType?: string;
   showPropertyPanel: boolean = false;
   propertyDetailsData: any;
-
+  active: any = 3;
+  hideSideBar: boolean = false;
   data = {
     formName: 'form123',
     userId: 3,
     addedElements: [] as any,
+    isRender: false,
+    frame: {
+      background_color: '#ffffff',
+      width: '50px',
+      height: '50px',
+    },
   };
 
   ngOnInit(): void {
@@ -47,6 +56,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
       this.showPropertyPanel = true;
       this.selectedPropertyType = res.type;
       this.propertyDetailsData = res;
+      this.active = 1;
     });
   }
 
@@ -58,6 +68,10 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
     // setTimeout(() => {
     //   this.initializeView();
     // }, 0);
+  }
+
+  toggleSidebar() {
+    this.hideSideBar = !this.hideSideBar;
   }
 
   initializeView() {
@@ -80,7 +94,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
     this.initializeView();
   }
 
-  drag(event: any, value: string) {
+  drag(event: any, value: string, isGroup?: boolean) {
     let obj = JSON.parse(
       JSON.stringify(
         this.formBuilderService.getElementsPropertiesWithName(value)

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_9000" data-name="Group 9000" transform="translate(7368 151)">
+    <g id="Rectangle_2696" data-name="Rectangle 2696" transform="translate(-7368 -151)" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+      <rect width="40" height="40" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+    </g>
+    <g id="Rectangle_2698" data-name="Rectangle 2698" transform="translate(-7359.924 -135)" fill="#f2f1f1" stroke="#707070" stroke-width="1">
+      <rect width="26" height="8.174" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="25" height="7.174" rx="0.5" fill="none"/>
+    </g>
+    <text id="Aa" transform="translate(-7358 -127)" fill="#707070" stroke="#fff" stroke-width="2" font-size="14" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="0">Aa</tspan></text>
+    <text id="Aa-2" data-name="Aa" transform="translate(-7358 -127)" fill="#707070" font-size="14" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="0">Aa</tspan></text>
+  </g>
+</svg>

@@ -45,6 +45,7 @@ export class RowContainerComponent implements OnInit {
   }
 
   initializeView() {
+    console.log(this.elementObj);
     this.container.clear();
     this.elementObj.addedElements.forEach((res: any) => {
       let componentRef: any = this.container.createComponent(

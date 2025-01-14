@@ -9,6 +9,13 @@ import { InputPropertyComponent } from './new-form-template/propertyComponent/in
 import { CheckboxPropertyComponent } from './new-form-template/propertyComponent/checkbox-property/checkbox-property.component';
 import { RowContainerComponent } from './new-form-template/element/row-container/row-container.component';
 import { RowContainerPropertyComponent } from './new-form-template/propertyComponent/row-container-property/row-container-property.component';
+import { FeatherModule } from 'angular-feather';
+import { allIcons } from 'angular-feather/icons';
+import {
+  NgbAccordionModule,
+  NgbModule,
+  NgbNavModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,6 +27,13 @@ import { RowContainerPropertyComponent } from './new-form-template/propertyCompo
     RowContainerComponent,
     RowContainerPropertyComponent,
   ],
-  imports: [CommonModule, FormsRoutingModule],
+  imports: [
+    CommonModule,
+    FormsRoutingModule,
+    FeatherModule.pick(allIcons),
+    NgbModule,
+    NgbNavModule,
+    NgbAccordionModule,
+  ],
 })
 export class FormsModule {}

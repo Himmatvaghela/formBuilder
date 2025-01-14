@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8993" data-name="Group 8993" transform="translate(-122 -295)">
+    <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Icon_feather-calendar" data-name="Icon feather-calendar" transform="translate(128.733 304.25)">
+      <path id="Rectangle_2724" data-name="Rectangle 2724" d="M0,0H18a0,0,0,0,1,0,0V8a1,1,0,0,1-1,1H1A1,1,0,0,1,0,8V0A0,0,0,0,1,0,0Z" transform="translate(4.267 8.75)" fill="#f2f1f1"/>
+      <path id="Path_2531" data-name="Path 2531" d="M6.479,6H20.331A1.791,1.791,0,0,1,22.31,7.5V18.03a1.791,1.791,0,0,1-1.979,1.5H6.479A1.791,1.791,0,0,1,4.5,18.03V7.5A1.791,1.791,0,0,1,6.479,6Z" transform="translate(0 -1.496)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2532" data-name="Path 2532" d="M24,3V6.007" transform="translate(-5.726)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2533" data-name="Path 2533" d="M12,3V6.007" transform="translate(-3.741)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2534" data-name="Path 2534" d="M4.5,15H22.31" transform="translate(0 -5.985)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

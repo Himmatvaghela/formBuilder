@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8989" data-name="Group 8989" transform="translate(-122 -295)">
+    <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_8151" data-name="Group 8151" transform="translate(-86.924 36.833)">
+      <g id="Group_8103" data-name="Group 8103" transform="translate(216 274.167)">
+        <g id="Rectangle_2698" data-name="Rectangle 2698" fill="#f2f1f1" stroke="#707070" stroke-width="1">
+          <rect width="26" height="8.174" rx="1" stroke="none"/>
+          <rect x="0.5" y="0.5" width="25" height="7.174" rx="0.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Path_2509" data-name="Path 2509" transform="translate(238.887 280.033) rotate(180)" fill="#f2f1f1">
+        <path d="M 3.29934549331665 2.366051435470581 L 0.8520233035087585 2.366051435470581 L 2.075686693191528 0.7345084547996521 L 3.29934549331665 2.366051435470581 Z" stroke="none"/>
+        <path d="M 2.075684785842896 -1.192092895507812e-06 C 2.120158672332764 -1.192092895507812e-06 2.164633750915527 0.01976633071899414 2.194283485412598 0.05930137634277344 L 4.121453762054443 2.628861427307129 C 4.194743633270264 2.726581335067749 4.125013828277588 2.866051435470581 4.002853393554688 2.866051435470581 L 0.1485137939453125 2.866051435470581 C 0.02635335922241211 2.866051435470581 -0.04337644577026367 2.726581335067749 0.02991342544555664 2.628861427307129 L 1.957093477249146 0.05930137634277344 C 1.986738681793213 0.01976633071899414 2.031211137771606 -1.192092895507812e-06 2.075684785842896 -1.192092895507812e-06 Z" stroke="none" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>

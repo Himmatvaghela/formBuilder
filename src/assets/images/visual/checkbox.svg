@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8992" data-name="Group 8992" transform="translate(-122 -295)">
+    <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Icon_feather-check-square" data-name="Icon feather-check-square" transform="translate(126.85 306.161)">
+      <path id="Path_2529" data-name="Path 2529" d="M13.5,9.1l1.329,1.329L19.259,6" transform="translate(-6.315 -1.057)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_2530" data-name="Path 2530" d="M12.5,8.5v3.111a.889.889,0,0,1-.889.889H5.389a.889.889,0,0,1-.889-.889V5.389A.889.889,0,0,1,5.389,4.5h4.89" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <path id="Icon_feather-square" data-name="Icon feather-square" d="M5.389,4.5h6.222a.889.889,0,0,1,.889.889v6.222a.889.889,0,0,1-.889.889H5.389a.889.889,0,0,1-.889-.889V5.389A.889.889,0,0,1,5.389,4.5Z" transform="translate(139.363 306.161)" fill="#f2f1f1" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

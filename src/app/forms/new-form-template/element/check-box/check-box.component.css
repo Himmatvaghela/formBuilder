@@ -1,0 +1,18 @@
+.selected {
+    border: 1px solid black;
+}
+
+.checkbox-container {
+    width: 40%;
+    height: 20px;
+    background-color: rgb(209, 205, 205);
+    display: flex;
+    align-items: center;
+    grid-gap: 30px;
+}
+
+.checkbox_lable{
+    display: flex;
+    align-items: center;
+    
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8981" data-name="Group 8981" transform="translate(2348 1961)">
+    <g id="Group_8956" data-name="Group 8956" transform="translate(-2470 -2256)">
+      <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+        <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+          <rect width="40" height="40" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="Icon_feather-smile" data-name="Icon feather-smile" transform="translate(-2338.5 -1951.3)">
+      <path id="Path_2583" data-name="Path 2583" d="M17.6,10.3A7.3,7.3,0,1,1,10.3,3,7.3,7.3,0,0,1,17.6,10.3Z" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+      <path id="Path_2584" data-name="Path 2584" d="M12,21a3.942,3.942,0,0,0,2.92,1.46A3.942,3.942,0,0,0,17.84,21" transform="translate(-4.62 -9.24)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+      <path id="Path_2585" data-name="Path 2585" d="M13.5,13.5h.007" transform="translate(-5.39 -5.39)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+      <path id="Path_2586" data-name="Path 2586" d="M22.5,13.5h.007" transform="translate(-10.01 -5.39)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    </g>
+  </g>
+</svg>

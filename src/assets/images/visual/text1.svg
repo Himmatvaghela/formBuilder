@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8975" data-name="Group 8975" transform="translate(2349 2236)">
+    <g id="Group_8950" data-name="Group 8950" transform="translate(-2478 -2444)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" transform="translate(129 208)" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <text id="ABC" transform="translate(-2339 -2212)" fill="#707070" font-size="10" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="0">ABC</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_8950" data-name="Group 8950" transform="translate(-122 -295)">
+    <g id="Group_8135" data-name="Group 8135" transform="translate(122 295)">
+      <g id="Rectangle_2696" data-name="Rectangle 2696" fill="#fff" stroke="#e4e4e4" stroke-width="1">
+        <rect width="40" height="40" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_8154" data-name="Group 8154" transform="translate(1 1)">
+      <g id="Group_8131" data-name="Group 8131" transform="translate(128.434 311.6)">
+        <g id="Rectangle_2698" data-name="Rectangle 2698" transform="translate(0)" fill="#c6c6c6" stroke="#707070" stroke-width="1">
+          <rect width="9.292" height="4.586" rx="1" stroke="none"/>
+          <rect x="0.5" y="0.5" width="8.292" height="3.586" rx="0.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_8132" data-name="Group 8132" transform="translate(136.725 311.6)">
+        <g id="Rectangle_2698-2" data-name="Rectangle 2698" transform="translate(0)" fill="none" stroke="#707070" stroke-width="1">
+          <rect width="9.442" height="4.586" rx="1" stroke="none"/>
+          <rect x="0.5" y="0.5" width="8.442" height="3.586" rx="0.5" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_8133" data-name="Group 8133" transform="translate(145.166 311.6)">
+        <g id="Rectangle_2698-3" data-name="Rectangle 2698" transform="translate(0)" fill="none" stroke="#707070" stroke-width="1">
+          <rect width="9.267" height="4.586" rx="1" stroke="none"/>
+          <rect x="0.5" y="0.5" width="8.267" height="3.586" rx="0.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

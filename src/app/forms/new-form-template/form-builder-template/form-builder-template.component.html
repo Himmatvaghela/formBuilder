@@ -1,15 +1,693 @@
-<div class="container">
-  <header>
-    <button (click)="addRow()">Add Row</button>
-  </header>
+<div class="containers">
+  <div class="inner_tabs">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <span class="icon" (click)="hideSideBar = false">
+        <i-feather name="align-justify"></i-feather>
+      </span>
+      <li [ngbNavItem]="1" *ngIf="showPropertyPanel">
+        <a ngbNavLink>Format</a>
+        <ng-template ngbNavContent>
+          <div class="nav_content">
+            <div class="ms-3 font_sizing_box">
+              <span class="me-2">Font Size :</span>
+              <a class="icon me-2"
+                ><i-feather name="minus" class="top-btn"></i-feather
+              ></a>
+              <input
+                type="number"
+                class="d-inline form-control w-50px h-23px"
+              />
+              <a class="icon ms-2"
+                ><i-feather name="plus" class="top-btn"></i-feather
+              ></a>
+            </div>
+
+            <div class="mx-2 font_styling">
+              <span class="b fw-bold">B</span>
+              <span class="i fw-bold fst-italic">I</span>
+              <span class="u fw-bold">U</span>
+            </div>
+
+            <div class="mx-2 ps-3 h_align">
+              <span>Horizontal Align :</span>
+              <span class=""
+                ><i-feather name="align-left" id="1"></i-feather
+              ></span>
+              <span class=""><i-feather name="align-center"></i-feather></span>
+              <span class=""><i-feather name="align-right"></i-feather></span>
+            </div>
+
+            <div class="vl_align">
+              <span>Vertical Align:</span>
+              <select
+                class="form-control custom-control h-20px fs-11px fw-500 d-inline-block"
+              >
+                <option value="top">Top</option>
+                <option value="middle">Middle</option>
+                <option value="bottom">Bottom</option>
+              </select>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2" *ngIf="showPropertyPanel">
+        <a ngbNavLink>Container</a>
+        <ng-template ngbNavContent>
+          <div class="nav_content">
+            <div class="dimension">
+              <span>W</span>
+              <input
+                type="text"
+                class="d-inline form-control form-control-sm w-50px h-20px ms-2"
+              />
+              <a class="p-2 lh-10"
+                ><i-feather name="link-2" class="icon_link"></i-feather
+              ></a>
+              <span>H</span>
+              <input
+                type="text"
+                class="d-inline form-control form-control-sm w-50px h-20px mx-2"
+              />
+            </div>
+
+            <div class="styles d-flex">
+              <div class="color_wrapper">
+                <span>Background:</span>
+                <input type="color" id="style1" />
+              </div>
+              <div class="color_wrapper">
+                <span>Border:</span>
+                <input type="color" id="style1" />
+              </div>
+            </div>
+
+            <div class="spacing d-flex">
+              <span class="px-2">Padding: </span>
+              <div class="side_wrapper">
+                <span>T</span>
+                <input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>B</span>
+                <input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>L</span
+                ><input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>R</span
+                ><input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+            </div>
+
+            <div class="spacing d-flex">
+              <span class="px-2">Margin: </span>
+              <div class="side_wrapper">
+                <span>T</span>
+                <input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>B</span>
+                <input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>L</span
+                ><input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+              <div class="side_wrapper">
+                <span>R</span
+                ><input
+                  type="number"
+                  class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                />
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3" *ngIf="!showPropertyPanel">
+        <a ngbNavLink>Frame</a>
+        <ng-template ngbNavContent>
+          <div class="nav_content">
+            <div class="dimension">
+              <span>W</span>
+              <input
+                type="text"
+                class="d-inline form-control form-control-sm w-50px h-20px ms-2"
+              />
+              <a class="p-2 lh-10"
+                ><i-feather name="link-2" class="icon_link"></i-feather
+              ></a>
+              <span>H</span>
+              <input
+                type="text"
+                class="d-inline form-control form-control-sm w-50px h-20px mx-2"
+              />
+            </div>
+            <div class="color_box">
+              <span>Background:</span>
+              <input type="color" id="style1" />
+            </div>
+            <button (click)="addRow()">Add Row</button>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="4" *ngIf="!showPropertyPanel">
+        <a ngbNavLink>Data & Integration</a>
+        <ng-template ngbNavContent>
+          <p>dsfadsfasdfdsfdjkf sdfdsjldf sadkfj</p>
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
+
   <div class="work-container">
-    <div class="sidebar">
-      <ul>
-        <li draggable="true" (dragstart)="drag($event, 'nf_input_text')">
-          Input
-        </li>
-        <li draggable="true" (dragstart)="drag($event, 'row')">Row</li>
-      </ul>
+    <div class="sidebar" *ngIf="!hideSideBar">
+      <div class="search_box">
+        <input type="text" placeholder="search" />
+        <i-feather name="x" (click)="hideSideBar = true"></i-feather>
+      </div>
+
+      <ngb-accordion [closeOthers]="true" activeIds="">
+        <ngb-panel
+          id="static_operators"
+          title="Visual Elements"
+          class="gray_bg"
+        >
+          <ng-template ngbPanelHeader let-opened="opened" class="black_bg">
+            <div
+              class="align-items-center d-flex accordion_bg py-9px px-3"
+              [class.collapsed]="!opened"
+            >
+              <button class="btn p-0" ngbPanelToggle>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="!opened"
+                  name="chevron-right"
+                ></i-feather>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="opened"
+                  name="chevron-down"
+                ></i-feather>
+                <span class="fw-600 fs-10px">VISUAL ELEMENTS</span>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_label')"
+            >
+              <img src="../../../../assets/images/visual/text1.svg" />
+              <p class="fs-10px ps-3 mb-0">Text</p>
+            </div>
+            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'paragraph')">
+                  <img src="../../../../assets/images/visual/paragraph1.svg" />
+                  <p class="fs-10px ps-3 mb-0">Paragraph</p>
+                </div>
+                <div class="d-flex justify-content-start align-items-center mb-2" draggable="true">
+                  <img src="../../../../assets/images/visual/shape1.svg" />
+                  <p class="fs-10px ps-3 mb-0">Shape</p>
+                </div> -->
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'image')"
+            >
+              <img src="../../../../assets/images/visual/image1.svg" />
+              <p class="fs-10px ps-3 mb-0">Image</p>
+            </div>
+            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true">
+                  <img src="../../../../assets/images/visual/video1.svg" />
+                  <p class="fs-10px ps-3 mb-0">Video</p>
+                </div>
+                <div class="d-flex justify-content-start align-items-center mb-2" draggable="true">
+                  <img src="../../../../assets/images/visual/map1.svg" />
+                  <p class="fs-10px ps-3 mb-0">Map</p>
+                </div> -->
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'icon')"
+            >
+              <img src="../../../../assets/images/visual/icon1.svg" />
+              <p class="fs-10px ps-3 mb-0">Icons</p>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="static-2">
+          <ng-template ngbPanelHeader let-opened="opened">
+            <div
+              class="align-items-center d-flex accordion_bg py-9px px-3"
+              [class.collapsed]="!opened"
+            >
+              <button class="btn p-0" ngbPanelToggle>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="!opened"
+                  name="chevron-right"
+                ></i-feather>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="opened"
+                  name="chevron-down"
+                ></i-feather>
+                <span class="fw-600 fs-10px"> INPUT FIELDS </span>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_input_text')"
+            >
+              <img src="../../../../assets/images/visual/text-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Text Input</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_input_number')"
+            >
+              <img src="../../../../assets/images/visual/number-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Input Number</p>
+            </div>
+
+            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'ip_address')">
+                    <img src="../../../../assets/images/visual/number-input.svg" />
+                    <p class="fs-10px ps-3 mb-0">Ip Address</p>
+                  </div> -->
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address_dropdown')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address Dropdown</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_text_area')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Text Area</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_file_upload')"
+            >
+              <img src="../../../../assets/images/visual/file.svg" />
+              <p class="fs-10px ps-3 mb-0">File Upload</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_single_select')"
+            >
+              <img src="../../../../assets/images/visual/select.svg" />
+              <p class="fs-10px ps-3 mb-0">Single Select Dropdown</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_multi_select')"
+            >
+              <img src="../../../../assets/images/visual/multiselect.svg" />
+              <p class="fs-10px ps-3 mb-0">Multi Select Dropdown</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_radio')"
+            >
+              <img src="../../../../assets/images/visual/radio.svg" />
+              <p class="fs-10px ps-3 mb-0">Radio Options</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_checkbox')"
+            >
+              <img src="../../../../assets/images/visual/checkbox.svg" />
+              <p class="fs-10px ps-3 mb-0">Checkbox Options</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_bandwidth')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Bandwidth</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_toggle')"
+            >
+              <img src="../../../../assets/images/visual/checkbox.svg" />
+              <p class="fs-10px ps-3 mb-0">Toggle</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_date')"
+            >
+              <img src="../../../../assets/images/visual/date.svg" />
+              <p class="fs-10px ps-3 mb-0">Date</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_time')"
+            >
+              <img src="../../../../assets/images/visual/time.svg" />
+              <p class="fs-10px ps-3 mb-0">Time</p>
+            </div>
+            <!--<div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'file')">
+                  <img src="../../../../assets/images/visual/file.svg" />
+                  <p class="fs-10px ps-3 mb-0">File</p>
+                </div> -->
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="static-3">
+          <ng-template ngbPanelHeader let-opened="opened">
+            <div
+              class="align-items-center d-flex accordion_bg py-9px px-3"
+              [class.collapsed]="!opened"
+            >
+              <button class="btn p-0" ngbPanelToggle>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="!opened"
+                  name="chevron-right"
+                ></i-feather>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="opened"
+                  name="chevron-down"
+                ></i-feather>
+                <span class="fw-600 fs-10px"> BUTTON ACTIONS </span>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_button')"
+            >
+              <img src="../../../../assets/images/visual/button.svg" />
+              <p class="fs-10px ps-3 mb-0">Button</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_hypertext')"
+            >
+              <img src="../../../../assets/images/visual/paragraph1.svg" />
+              <p class="fs-10px ps-3 mb-0">Hypertext</p>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="static-4">
+          <ng-template ngbPanelHeader let-opened="opened">
+            <div
+              class="align-items-center d-flex accordion_bg py-9px px-3"
+              [class.collapsed]="!opened"
+            >
+              <button class="btn p-0" ngbPanelToggle>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="!opened"
+                  name="chevron-right"
+                ></i-feather>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="opened"
+                  name="chevron-down"
+                ></i-feather>
+                <span class="fw-600 fs-10px">LAYOUT ELEMENTS </span>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'row')"
+            >
+              <img src="../../../../assets/images/layout/section.svg" />
+              <p class="fs-10px ps-3 mb-0">Container</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_repeatable_container')"
+            >
+              <img src="../../../../assets/images/layout/collapse.svg" />
+              <p class="fs-10px ps-3 mb-0">Repeatable Container</p>
+            </div>
+            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'column')">
+                    <img src="../../../../assets/images/layout/section.svg" />
+                    <p class="fs-10px ps-3 mb-0">Column</p>
+                  </div> -->
+            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'section')">
+                    <img src="../../../../assets/images/layout/section.svg" />
+                    <p class="fs-10px ps-3 mb-0">Section</p>
+                  </div>
+                  <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'repeatable_section')">
+                    <img src="../../../../assets/images/layout/collapse.svg" />
+                    <p class="fs-10px ps-3 mb-0">Repeatable Section</p>
+                  </div> -->
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_accordion')"
+            >
+              <img src="../../../../assets/images/layout/collapse.svg" />
+              <p class="fs-10px ps-3 mb-0">Collapsible Section</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_tab')"
+            >
+              <img src="../../../../assets/images/layout/tab.svg" />
+              <p class="fs-10px ps-3 mb-0">Tabs</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'divider')"
+            >
+              <img src="../../../../assets/images/visual/paragraph1.svg" />
+              <p class="fs-10px ps-3 mb-0">Divider-line</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'table')"
+            >
+              <img src="../../../../assets/images/layout/section.svg" />
+              <p class="fs-10px ps-3 mb-0">Table</p>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel id="static-5">
+          <ng-template ngbPanelHeader let-opened="opened">
+            <div
+              class="align-items-center d-flex accordion_bg py-9px px-3"
+              [class.collapsed]="!opened"
+            >
+              <button class="btn p-0" ngbPanelToggle>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="!opened"
+                  name="chevron-right"
+                ></i-feather>
+                <i-feather
+                  class="icon_14px"
+                  *ngIf="opened"
+                  name="chevron-down"
+                ></i-feather>
+                <span class="fw-600 fs-10px">REUSABLE GROUPS </span>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_input_text', true)"
+            >
+              <img src="../../../../assets/images/visual/text-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Text Input Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_input_number', true)"
+            >
+              <img src="../../../../assets/images/visual/number-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Input Number Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_text_area', true)"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Text Area Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_file_upload', true)"
+            >
+              <img src="../../../../assets/images/visual/file.svg" />
+              <p class="fs-10px ps-3 mb-0">File Upload Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address', true)"
+            >
+              <img src="../../../../assets/images/visual/number-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address_dropdown', true)"
+            >
+              <img src="../../../../assets/images/visual/number-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address Dropdown Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_single_select', true)"
+            >
+              <img src="../../../../assets/images/visual/select.svg" />
+              <p class="fs-10px ps-3 mb-0">Single Select Dropdown Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_multi_select', true)"
+            >
+              <img src="../../../../assets/images/visual/multiselect.svg" />
+              <p class="fs-10px ps-3 mb-0">Multi Select Dropdown Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_radio', true)"
+            >
+              <img src="../../../../assets/images/visual/radio.svg" />
+              <p class="fs-10px ps-3 mb-0">Radio Options Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_checkbox', true)"
+            >
+              <img src="../../../../assets/images/visual/checkbox.svg" />
+              <p class="fs-10px ps-3 mb-0">Checkbox Options Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_bandwidth', true)"
+            >
+              <img src="../../../../assets/images/visual/text-input.svg" />
+              <p class="fs-10px ps-3 mb-0">Bandwidth Group</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_toggle', true)"
+            >
+              <img src="../../../../assets/images/visual/checkbox.svg" />
+              <p class="fs-10px ps-3 mb-0">Toggle Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_date', true)"
+            >
+              <img src="../../../../assets/images/visual/date.svg" />
+              <p class="fs-10px ps-3 mb-0">Date Group</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_time', true)"
+            >
+              <img src="../../../../assets/images/visual/time.svg" />
+              <p class="fs-10px ps-3 mb-0">Time Group</p>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
     </div>
     <div class="builder-area">
       <ng-container #container> </ng-container>
@@ -20,11 +698,18 @@
         [elementObj]="propertyDetailsData"
         [formData]="data"
       ></app-input-property>
+
       <app-row-container-property
         *ngIf="selectedPropertyType == 'row'"
         [elementObj]="propertyDetailsData"
         [formData]="data"
       ></app-row-container-property>
+
+      <app-checkbox-property
+        *ngIf="selectedPropertyType == 'nf_checkbox'"
+        [elementObj]="propertyDetailsData"
+        [formData]="data"
+      ></app-checkbox-property>
     </div>
   </div>
 </div>
