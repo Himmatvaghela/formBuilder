@@ -10,6 +10,35 @@
     background-repeat: repeat;
 }
 
+.containers .header_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.3rem 2rem 0.3rem 1rem;
+    /* border-top: 0.22vh solid #ced4da;
+    border-bottom: 0.22vh solid #ced4da; */
+}
+
+.containers .header_row h1{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.containers .header_row .save_btn{
+    background-color: #2680eb;
+    border: 1px solid #2680eb;
+    color: #ffffff !important;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2vw;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0.3rem 1.5rem;
+}
+
 a{
     color: black;
 }
@@ -35,6 +64,7 @@ a{
     color: black;
     font-size: 20px;
     overflow-y: auto;
+    border-right: 1px solid #e3dede;
 }
 
 .search_box{
@@ -50,9 +80,14 @@ a{
     border-radius: 25px;
     padding-left: 10px;
 }
+
+
 .sidebar ::ng-deep .accordion-item {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     background: #f0f0fc !important;
-    border-right: 1px solid #d4d4da !important;
+    border-right: none;
+    /* border-right: 1px solid #d4d4da !important; */
 }
 
 .sidebar ::ng-deep .accordion-item .accordion-body img {
@@ -119,6 +154,8 @@ a{
 
 .containers .inner_tabs{
     background-color: white;
+    border-top: 0.22vh solid #ced4da;
+    border-bottom: 0.22vh solid #ced4da;
 }
 
 .containers .inner_tabs ul .icon{

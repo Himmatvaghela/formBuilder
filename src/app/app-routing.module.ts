@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'forms',
     loadChildren: () =>
-      import('../../src/app/forms/forms.module').then((m) => m.FormsModule),
+      import('../../src/app/forms/forms.module').then((m) => m.FormModule),
   },
 ];
 

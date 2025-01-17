@@ -1,0 +1,88 @@
+<main class="dashboard_container">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="0" (click)="getAllForms()">
+      <a ngbNavLink> Form Builder </a>
+      <ng-template ngbNavContent>
+        <div class="row_header">
+          <span class="heading">All Forms List</span>
+          <div class="box">
+            <input type="text" placeholder="search....." />
+            <button class="create_btn" (click)="openModel(content)">
+              <i-feather name="plus"></i-feather>
+              <span>Create New Form</span>
+            </button>
+          </div>
+        </div>
+        <div class="table">
+          <app-ag-grid></app-ag-grid>
+        </div>
+      </ng-template>
+    </li>
+
+    <ng-container *ngFor="let subForm of subFormBuilders; let i = index">
+      <li [ngbNavItem]="i + 1" (click)="onTabSwitch(subForm)">
+        <a ngbNavLink>
+          {{ subForm.name }}
+          <span
+            class="btn-close ms-3 fw-light"
+            (click)="closeTab($event, i)"
+          ></span>
+        </a>
+        <ng-template ngbNavContent>
+          <app-form-builder-template
+            [formDetails]="selectedFormData"
+          ></app-form-builder-template>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class=""></div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" style="color: #644099">New Form</h4>
+      <!-- <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button> -->
+    </div>
+    <form [formGroup]="createForm" (submit)="createNewForm()">
+      <div class="modal-body">
+        <div class="input_lable_box">
+          <label>Name :</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div class="input_lable_box">
+          <label>Description :</label>
+          <input type="text" formControlName="description" />
+        </div>
+        <div class="input_lable_box">
+          <label>User Name :</label>
+          <input type="text" formControlName="created_by" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="reset"
+          class="btn cancel_btn"
+          (click)="modal.close('Close click')"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="btn create_btn"
+          (click)="modal.close('Close click')"
+          ngClass="{{ createForm.invalid ? 'disable' : '' }}"
+          [disabled]="createForm.invalid"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </ng-template>
+</main>

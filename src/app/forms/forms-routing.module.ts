@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormBuilderTemplateComponent } from './new-form-template/form-builder-template/form-builder-template.component';
+import { FormBuilderDashboardComponent } from './form-builder-dashboard/form-builder-dashboard.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: FormBuilderTemplateComponent,
+    component: FormBuilderDashboardComponent,
   },
 ];
 

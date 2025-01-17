@@ -1,4 +1,8 @@
 <div class="containers">
+  <div class="header_row">
+    <h1>{{ customForm.name }}</h1>
+    <button class="save_btn">Save Form</button>
+  </div>
   <div class="inner_tabs">
     <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
       <span class="icon" (click)="hideSideBar = false">
@@ -185,7 +189,11 @@
     <div [ngbNavOutlet]="nav"></div>
   </div>
 
-  <div class="work-container">
+  <div
+    class="work-container"
+    id="unfocused"
+    (click)="onPropertyPanelClose($event)"
+  >
     <div class="sidebar" *ngIf="!hideSideBar">
       <div class="search_box">
         <input type="text" placeholder="search" />
@@ -696,19 +704,19 @@
       <app-input-property
         *ngIf="selectedPropertyType == 'nf_input_text'"
         [elementObj]="propertyDetailsData"
-        [formData]="data"
+        [formData]="customForm"
       ></app-input-property>
 
       <app-row-container-property
         *ngIf="selectedPropertyType == 'row'"
         [elementObj]="propertyDetailsData"
-        [formData]="data"
+        [formData]="customForm"
       ></app-row-container-property>
 
       <app-checkbox-property
         *ngIf="selectedPropertyType == 'nf_checkbox'"
         [elementObj]="propertyDetailsData"
-        [formData]="data"
+        [formData]="customForm"
       ></app-checkbox-property>
     </div>
   </div>

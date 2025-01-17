@@ -16,6 +16,10 @@ import {
   NgbModule,
   NgbNavModule,
 } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilderDashboardComponent } from './form-builder-dashboard/form-builder-dashboard.component';
+import { AgGridComponent } from '../common/ag-grid/ag-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,8 @@ import {
     CheckboxPropertyComponent,
     RowContainerComponent,
     RowContainerPropertyComponent,
+    FormBuilderDashboardComponent,
+    AgGridComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +40,9 @@ import {
     NgbModule,
     NgbNavModule,
     NgbAccordionModule,
+    AgGridModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
-export class FormsModule {}
+export class FormModule {}

@@ -36,13 +36,13 @@ export class FormBuilderServiceService {
     return GridData.find((document) => document.type == type);
   }
 
-  // customFormData: any = {};
-  // setCustomFormData() {
-  //   localStorage.setItem(
-  //     'customTemplateData',
-  //     JSON.stringify(this.customFormData)
-  //   );
-  // }
+  customFormData: any = {};
+  setCustomFormData() {
+    localStorage.setItem(
+      'customTemplateData',
+      JSON.stringify(this.customFormData)
+    );
+  }
 
   showSelectedOperaterSetter(elementId: any) {
     this.showSelectedOperater.next(elementId);
