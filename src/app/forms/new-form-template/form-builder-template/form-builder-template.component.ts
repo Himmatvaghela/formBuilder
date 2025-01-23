@@ -11,6 +11,8 @@ import {
 import { rowContainer } from '../../forms.dto';
 import { FormBuilderServiceService } from '../form-builder-service.service';
 import { NgbNavConfig } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-builder-template',
@@ -89,12 +91,16 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
   initializeView() {
     this.container.clear();
     console.log(this.customForm);
-    this.customForm.addedElements.forEach((res: any) => {
+    this.customForm.addedElements.forEach((res: any, index: number) => {
       let componentRef: any = this.container.createComponent(
         this.formBuilderService.findComponent(res.type)
       );
       componentRef.instance.elementObj = res;
       componentRef.instance.formData = this.customForm;
+      componentRef.instance.index = index;
+      componentRef.instance.deleteElement.subscribe((res: any) => {
+        this.deleteSelectedElement(res);
+      });
     });
     this.changeDetect.detectChanges();
   }
@@ -130,5 +136,30 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
     if (event.target.id == 'unfocused') {
       this.formBuilderService.isPropertyPanelOpenSetter(null);
     }
+  }
+
+  saveForm() {
+    this.formBuilderService.setCustomFormData();
+    let savedFormList =
+      JSON.parse(localStorage.getItem('savedFormList') as string) || [];
+    let ind = savedFormList.findIndex(
+      (val: any) => val.id == this.customForm.id
+    );
+    if (ind < 0) {
+      savedFormList.unshift(this.customForm);
+      localStorage.setItem('savedFormList', JSON.stringify(savedFormList));
+    } else {
+      savedFormList.splice(ind, 1, this.customForm);
+      localStorage.setItem('savedFormList', JSON.stringify(savedFormList));
+    }
+    this.formBuilderService.isPropertyPanelOpenSetter(null);
+    Swal.fire({ text: 'Form Saved Successfully', confirmButtonText: 'Ok' });
+  }
+
+  deleteSelectedElement(obj: any) {
+    this.customForm.addedElements.splice(obj.index, 1);
+    this.formBuilderService.isPropertyPanelOpenSetter(null);
+    this.formBuilderService.setCustomFormData();
+    this.initializeView();
   }
 }

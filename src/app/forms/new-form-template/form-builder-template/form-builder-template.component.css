@@ -2,7 +2,7 @@
 
 .containers{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     /* background-color: grey; */
     background-image: url(../../../../assets/images/bg1.png);
     background-attachment: fixed;
@@ -26,9 +26,8 @@
 }
 
 .containers .header_row .save_btn{
-    background-color: #2680eb;
-    border: 1px solid #2680eb;
-    color: #ffffff !important;
+    border: 2px solid #9b60c6;
+    color: #9b60c6 !important;
     height: 60%;
     display: flex;
     align-items: center;
@@ -37,6 +36,13 @@
     border-radius: 5px;
     font-size: 16px;
     padding: 0.3rem 1.5rem;
+    background-color: white;
+    font-weight: bold;
+}
+
+.containers .header_row .save_btn:hover{
+    background-color: #9b60c6;
+    color: #ffffff !important;
 }
 
 a{
@@ -45,7 +51,7 @@ a{
 
 .containers .work-container{
     width: 100%;
-    height: 90%;
+    height: 83.5%;
     /* background-color: grey; */
     display: flex;
     justify-content: center;
@@ -142,20 +148,21 @@ a{
 }
 
 .containers .work-container .panel {
-    position: absolute;
+    top: 11.8rem;
+    position: fixed;
+    background-color: #f5f6f7;
     right: 0;
-    top: 0;
-    width: 20%;
+    width: 23.4vw;
+    box-shadow: -1px 0px 2px #00000029;
+    z-index: 2;
     height: 100%;
-    background-color: antiquewhite;
-    color: black;
-    font-size: 20px;
 }
 
 .containers .inner_tabs{
     background-color: white;
     border-top: 0.22vh solid #ced4da;
     border-bottom: 0.22vh solid #ced4da;
+    height: 5.9rem;
 }
 
 .containers .inner_tabs ul .icon{

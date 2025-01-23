@@ -1,12 +1,16 @@
 import {
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   Input,
+  OnDestroy,
   OnInit,
+  Output,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-row-container',
@@ -21,11 +25,13 @@ export class RowContainerComponent implements OnInit {
 
   @Input() elementObj: any;
   @Input() formData: any;
+  @Input() index!: number;
 
   @ViewChild('container', { read: ViewContainerRef })
   container!: ViewContainerRef;
-
   isSelected: boolean = false;
+  @Output() deleteElement = new EventEmitter();
+
   ngOnInit(): void {
     // this.initializeView();
     // setTimeout(() => {
@@ -37,6 +43,18 @@ export class RowContainerComponent implements OnInit {
         this.isSelected = true;
       }
     });
+
+    this.formBuilderService.deleteSelectedOperator.subscribe((val: any) => {
+      if (val.elementId == this.elementObj.elementId) {
+        console.log('row', this.elementObj);
+        this.onOperatorDelete();
+      }
+    });
+  }
+
+  onOperatorDelete() {
+    this.formBuilderService.isPropertyPanelOpenSetter(null);
+    this.deleteElement.emit({ element: this.elementObj, index: this.index });
   }
 
   ngAfterViewInit(): void {
@@ -47,13 +65,25 @@ export class RowContainerComponent implements OnInit {
   initializeView() {
     console.log(this.elementObj);
     this.container.clear();
-    this.elementObj.addedElements.forEach((res: any) => {
+    this.elementObj.addedElements.forEach((res: any, index: number) => {
       let componentRef: any = this.container.createComponent(
         this.formBuilderService.findComponent(res.type)
       );
       componentRef.instance.elementObj = res;
       componentRef.instance.formData = this.formData;
+      componentRef.instance.index = index;
+
+      componentRef.instance.deleteElement.subscribe((res: any) => {
+        this.deleteSelectedElement(res);
+      });
     });
+  }
+
+  deleteSelectedElement(obj: any) {
+    this.elementObj.addedElements.splice(obj.index, 1);
+    this.formBuilderService.isPropertyPanelOpenSetter(null);
+    this.formBuilderService.setCustomFormData();
+    this.initializeView();
   }
 
   drop(event: any) {

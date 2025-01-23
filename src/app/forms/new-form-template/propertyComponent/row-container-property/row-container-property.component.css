@@ -1,0 +1,74 @@
+
+.property_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.rows{
+    width: 100%;
+    padding: 0.7rem 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.heading_row{
+    grid-gap: 0.5rem;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #ced4da;
+}
+
+.rows span{
+    font-size: 20px;
+}
+
+.input_row{
+    justify-content: space-between;
+}
+
+.input_row input,select{
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid grey;
+    height: 26px;
+    font-size: 12px;
+    outline: none;
+}
+
+.input_row select{
+    color: grey;
+}
+
+.input_row option{
+    color: black;
+}
+
+.input_row .disable{
+    background-color: rgb(223, 223, 223);
+}
+
+.btn_row{
+    justify-content: flex-end;
+}
+
+.btn_row .save_btn{
+    background-color: #9b60c6;
+    border: 1px solid #9b60c6;
+    color: #ffffff !important;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2vw;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0.3rem 1.2rem;
+}
+
+.btn_row .btn_disable{
+    background-color: #b786da;
+    pointer-events: none;
+}

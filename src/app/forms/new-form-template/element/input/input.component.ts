@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
 
 @Component({
@@ -11,6 +11,8 @@ export class InputComponent implements OnInit {
 
   @Input() elementObj: any;
   @Input() formData: any;
+  @Input() index!: number;
+  @Output() deleteElement = new EventEmitter();
   isSelected: boolean = false;
   ngOnInit(): void {
     setTimeout(() => {
@@ -21,6 +23,18 @@ export class InputComponent implements OnInit {
         }
       });
     }, 300);
+
+    this.formBuilderService.deleteSelectedOperator.subscribe((val: any) => {
+      if (val.elementId == this.elementObj.elementId) {
+        console.log('input', this.elementObj);
+        this.onOperatorDelete();
+      }
+    });
+  }
+
+  onOperatorDelete() {
+    this.formBuilderService.isPropertyPanelOpenSetter(null);
+    this.deleteElement.emit({ element: this.elementObj, index: this.index });
   }
 
   openPropertyPanel(event: any) {

@@ -14,7 +14,11 @@
           </div>
         </div>
         <div class="table">
-          <app-ag-grid></app-ag-grid>
+          <app-ag-grid
+            [rowData]="savedFormsList"
+            [colDefs]="colDefs"
+            [gridOptions]="gridOptions"
+          ></app-ag-grid>
         </div>
       </ng-template>
     </li>

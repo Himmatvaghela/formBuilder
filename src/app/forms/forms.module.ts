@@ -20,6 +20,8 @@ import { FormBuilderDashboardComponent } from './form-builder-dashboard/form-bui
 import { AgGridComponent } from '../common/ag-grid/ag-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActionRendererComponent } from './form-builder-dashboard/action-renderer/action-renderer.component';
+// import { AppModule } from '../app.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RowContainerPropertyComponent,
     FormBuilderDashboardComponent,
     AgGridComponent,
+    ActionRendererComponent,
   ],
   imports: [
     CommonModule,

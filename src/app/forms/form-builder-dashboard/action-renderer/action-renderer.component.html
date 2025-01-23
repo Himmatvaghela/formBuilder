@@ -1,0 +1,51 @@
+<div ngbDropdown container="body">
+  <a
+    class="nav-link"
+    tabindex="0"
+    ngbDropdownToggle
+    id="navbarDropdown3"
+    role="button"
+  >
+    <i-feather
+      name="more-horizontal"
+      class="updateClass border search_feather"
+    ></i-feather>
+  </a>
+  <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+    <a
+      ngbDropdownItem
+      class="d-flex align-items-center gap-2 cursor-pointer"
+      (click)="renderForm()"
+    >
+      <i-feather name="info" class="updateClass search_feather"></i-feather>
+      <span class="fs-12px text-primary fw-500">Preview</span>
+    </a>
+    <a
+      ngbDropdownItem
+      class="d-flex align-items-center cursor-pointer gap-2"
+      (click)="editForm()"
+    >
+      <i-feather name="edit" class="updateClass search_feather"></i-feather>
+      <span class="fs-12px text-primary fw-500">Edit</span>
+    </a>
+    <!-- <a
+      ngbDropdownItem
+      class="d-flex align-items-center cursor-pointer gap-2"
+      (click)="cloneForm()"
+    >
+      <i-feather name="copy" class="updateClass search_feather"></i-feather>
+      <span class="fs-12px text-primary fw-500">Duplicate</span>
+    </a> -->
+    <a
+      ngbDropdownItem
+      class="d-flex align-items-center cursor-pointer gap-2 text-danger"
+      (click)="deleteForm()"
+    >
+      <i-feather
+        name="trash-2"
+        class="updateClass search_feather text-danger"
+      ></i-feather>
+      <span class="fs-12px fw-500">Delete</span>
+    </a>
+  </div>
+</div>

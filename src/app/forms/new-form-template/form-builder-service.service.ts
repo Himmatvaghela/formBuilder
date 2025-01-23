@@ -13,6 +13,8 @@ export class FormBuilderServiceService {
 
   showSelectedOperater = new Subject();
   isPropertyPanelOpen = new Subject();
+  deleteSelectedOperator = new Subject();
+
   componentList = [
     {
       name: 'nf_input_text',
@@ -50,5 +52,9 @@ export class FormBuilderServiceService {
 
   isPropertyPanelOpenSetter(elementObj: any) {
     this.isPropertyPanelOpen.next(elementObj);
+  }
+
+  deleteSelectedOperatorSetter(data: any) {
+    this.deleteSelectedOperator.next(data);
   }
 }

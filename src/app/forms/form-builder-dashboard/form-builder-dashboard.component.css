@@ -10,6 +10,13 @@
     box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
 }
 
+::ng-deep .tab-content{
+    height: 94.7%;
+}
+::ng-deep .tab-pane{
+    height: 100%;
+}
+
 .nav-tabs{
     border-bottom: 2px solid rgb(207, 205, 205);
     height: 3rem;

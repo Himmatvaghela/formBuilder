@@ -1,7 +1,7 @@
 <div class="containers">
   <div class="header_row">
     <h1>{{ customForm.name }}</h1>
-    <button class="save_btn">Save Form</button>
+    <button class="save_btn" (click)="saveForm()">Save Form</button>
   </div>
   <div class="inner_tabs">
     <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
