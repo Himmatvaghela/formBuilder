@@ -7,7 +7,12 @@ import { ColDef } from 'ag-grid-community';
   styleUrls: ['./ag-grid.component.css'],
 })
 export class AgGridComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    //this.context = { componentParent: this };
+    this.getRowHeight = function () {
+      return 50;
+    };
+  }
 
   @Input() rowData: any;
   @Input() colDefs: any;
@@ -15,6 +20,11 @@ export class AgGridComponent implements OnInit {
   defaultColDef: ColDef = {
     minWidth: 200,
     flex: 1,
+    filter: true,
+    resizable: true,
+    sortable: true,
   };
+  getRowHeight: any;
+  rowSelection: 'single' | 'multiple' = 'multiple';
   ngOnInit(): void {}
 }

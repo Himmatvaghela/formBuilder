@@ -40,7 +40,6 @@ export class CheckboxPropertyComponent implements OnInit {
   }
 
   deleteElement() {
-    console.log('check-prop', this.elementObj);
     this.formBuilderService.deleteSelectedOperatorSetter(this.elementObj);
   }
 }

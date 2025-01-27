@@ -27,7 +27,6 @@ export class CheckBoxComponent implements OnInit {
 
     this.formBuilderService.deleteSelectedOperator.subscribe((val: any) => {
       if (val.elementId == this.elementObj.elementId) {
-        console.log('checkbox', this.elementObj);
         this.onOperatorDelete();
       }
     });

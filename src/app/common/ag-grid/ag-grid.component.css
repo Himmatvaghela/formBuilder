@@ -1,0 +1,69 @@
+[class*="ag-theme-"] {
+    --ag-foreground-color: #ffffff !important;
+    --ag-data-color: #262626 !important;
+    --ag-secondary-foreground-color: var(--ag-foreground-color);
+    --ag-header-foreground-color: var(--ag-secondary-foreground-color);
+    --ag-header-background-color: #929292 !important;
+    --ag-font-size:11px;
+    --ag-selected-row-background-color:none;
+    --ag-checkbox-border-radius: 10px;
+    --ag-row-hover-color: rgb(228, 226, 226);
+}
+
+.ag-cell,
+.ag-full-width-row .ag-cell-wrapper.ag-row-group {
+    line-height: 30px !important;
+    height: 30px !important;
+    text-align: left;
+}
+
+.ag-row-no-animation .ag-row {
+    height: 30px !important;
+    line-height: 30px !important;
+    /* transform: translateY(36px) !important; */
+}
+
+.ag-root-wrapper {
+    border: 0;
+}
+
+.ag-header {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #929292;
+    height: 30px !important;
+    min-height: 30px !important;
+}
+
+.ag-header-cell,
+.ag-header-row {
+    height: 30px;
+    line-height: 30px;
+}
+
+.ag-row-odd {
+    background-color: #ffffff !important;
+}
+
+::ng-deep .ag-row-selected {
+    background-color: rgb(230, 230, 230);
+}
+
+/* .col-form-label{line-height:1; font-weight:400; font-size:12px;} */
+.ag-header-cell-text {
+    color: #fff !important;
+    font-size: 0.875rem !important;
+}
+
+.ag-header-cell-menu-button:not(.ag-header-menu-always-show) {
+    color: #fff !important;
+}
+
+.ag-row {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+::ng-deep .ag-root-wrapper{
+    border: 2px solid rgb(172, 171, 171);
+    border-radius: 5px;
+}

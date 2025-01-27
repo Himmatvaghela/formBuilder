@@ -63,3 +63,7 @@
 .dropdown-toggle::after{
     display: none !important;
 }
+
+a:hover{
+    cursor: pointer;
+}

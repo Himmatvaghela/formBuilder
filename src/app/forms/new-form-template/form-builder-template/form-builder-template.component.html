@@ -158,23 +158,29 @@
             <div class="dimension">
               <span>W</span>
               <input
-                type="text"
+                type="number"
                 class="d-inline form-control form-control-sm w-50px h-20px ms-2"
+                [(ngModel)]="customForm.frame.width"
               />
               <a class="p-2 lh-10"
                 ><i-feather name="link-2" class="icon_link"></i-feather
               ></a>
               <span>H</span>
               <input
-                type="text"
+                type="number"
                 class="d-inline form-control form-control-sm w-50px h-20px mx-2"
+                [(ngModel)]="customForm.frame.height"
               />
             </div>
             <div class="color_box">
               <span>Background:</span>
-              <input type="color" id="style1" />
+              <input
+                type="color"
+                id="style1"
+                [(ngModel)]="customForm.frame.background_color"
+              />
             </div>
-            <button (click)="addRow()">Add Row</button>
+            <button (click)="addRow()" class="add_row_btn">Add Row</button>
           </div>
         </ng-template>
       </li>
@@ -697,7 +703,14 @@
         </ngb-panel>
       </ngb-accordion>
     </div>
-    <div class="builder-area">
+    <div
+      class="builder-area"
+      [ngStyle]="{
+        backgroundColor: customForm.frame.background_color,
+        width: customForm.frame.width + 'px',
+        height: customForm.frame.height + 'px'
+      }"
+    >
       <ng-container #container> </ng-container>
     </div>
     <div class="panel" *ngIf="showPropertyPanel">

@@ -26,7 +26,6 @@ export class InputComponent implements OnInit {
 
     this.formBuilderService.deleteSelectedOperator.subscribe((val: any) => {
       if (val.elementId == this.elementObj.elementId) {
-        console.log('input', this.elementObj);
         this.onOperatorDelete();
       }
     });

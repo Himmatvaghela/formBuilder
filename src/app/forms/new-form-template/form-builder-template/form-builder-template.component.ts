@@ -48,13 +48,6 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
   // };
 
   ngOnInit(): void {
-    // this.initializeView();
-    // let obj = JSON.parse(JSON.stringify(rowContainer));
-    // obj = { ...obj, elementId: rowContainer.type + '-' + new Date().getTime() };
-    // this.customForm.addedElements.push(obj);
-    // setTimeout(() => {
-    //   this.initializeView();
-    // }, 0);
     this.formBuilderService.isPropertyPanelOpen.subscribe((res: any) => {
       if (res != null) {
         this.formBuilderService.showSelectedOperaterSetter(res);
@@ -90,7 +83,6 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
 
   initializeView() {
     this.container.clear();
-    console.log(this.customForm);
     this.customForm.addedElements.forEach((res: any, index: number) => {
       let componentRef: any = this.container.createComponent(
         this.formBuilderService.findComponent(res.type)

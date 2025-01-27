@@ -46,7 +46,6 @@ export class RowContainerComponent implements OnInit {
 
     this.formBuilderService.deleteSelectedOperator.subscribe((val: any) => {
       if (val.elementId == this.elementObj.elementId) {
-        console.log('row', this.elementObj);
         this.onOperatorDelete();
       }
     });
@@ -63,7 +62,6 @@ export class RowContainerComponent implements OnInit {
   }
 
   initializeView() {
-    console.log(this.elementObj);
     this.container.clear();
     this.elementObj.addedElements.forEach((res: any, index: number) => {
       let componentRef: any = this.container.createComponent(
@@ -99,7 +97,6 @@ export class RowContainerComponent implements OnInit {
   }
 
   allowDrop(event: DragEvent) {
-    console.log('event');
     event.preventDefault();
   }
 

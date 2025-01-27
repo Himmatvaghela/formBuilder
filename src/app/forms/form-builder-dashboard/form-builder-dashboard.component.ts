@@ -28,20 +28,34 @@ export class FormBuilderDashboardComponent implements OnInit {
     description: new FormControl('', [Validators.required]),
     created_by: new FormControl('', [Validators.required]),
   });
-
   colDefs: ColDef[] = [
-    { headerName: 'Name', field: 'name' },
+    {
+      headerName: 'Name',
+      field: 'name',
+      headerCheckboxSelection: true,
+      checkboxSelection: true,
+    },
     { headerName: 'Description', field: 'description' },
     { headerName: 'Created BY', field: 'created_by' },
-    { headerName: 'Action', cellRenderer: ActionRendererComponent },
+    { headerName: 'Created On', field: 'created_on' },
+    { headerName: 'Action', cellRenderer: ActionRendererComponent, width: 220 },
   ];
 
   ngOnInit(): void {
     this.savedFormsList =
       JSON.parse(localStorage.getItem('savedFormList') as string) || [];
     this.active = Number(localStorage.getItem('active'));
-    this.selectedFormData =
-      JSON.parse(localStorage.getItem('customTemplateData') as string) || [];
+    this.selectedFormData = JSON.parse(
+      localStorage.getItem('customTemplateData') as string
+    );
+    let selctdata = this.savedFormsList.find(
+      (val: any) => val.id == this.selectedFormData.id
+    );
+    this.selectedFormData = selctdata;
+    localStorage.setItem(
+      'customTemplateData',
+      JSON.stringify(this.selectedFormData)
+    );
     this.subFormBuilders =
       JSON.parse(localStorage.getItem('subFormBuilders') as string) || [];
 
@@ -54,7 +68,6 @@ export class FormBuilderDashboardComponent implements OnInit {
   }
 
   deleteForm(id: any) {
-    console.log('delete form', id);
     let subFormData =
       JSON.parse(localStorage.getItem('subFormBuilders') as string) || [];
     let ind = subFormData.findIndex((val: any) => id == val.id);
@@ -74,7 +87,6 @@ export class FormBuilderDashboardComponent implements OnInit {
   }
 
   editFormInTab(editObj: any) {
-    console.log('editForm', editObj);
     let subFormData =
       JSON.parse(localStorage.getItem('subFormBuilders') as string) || [];
     let ind = subFormData.findIndex((val: any) => editObj.id == val.id);
@@ -125,7 +137,6 @@ export class FormBuilderDashboardComponent implements OnInit {
   }
 
   createNewForm() {
-    console.log(this.createForm.value);
     let data = this.createForm.value;
     this.selectedFormData = {
       isRender: false,
@@ -137,6 +148,13 @@ export class FormBuilderDashboardComponent implements OnInit {
         height: 500,
       },
       id: Date.now().toString(36) + Math.random().toString(36).substr(2),
+      created_on: new Date()
+        .toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })
+        .replace(/ /g, '/'),
       addedElements: [],
       created_by: data.created_by,
       // userId: localStorage.getItem('userId'),

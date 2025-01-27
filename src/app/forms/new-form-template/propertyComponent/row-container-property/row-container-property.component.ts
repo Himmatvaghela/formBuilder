@@ -38,7 +38,6 @@ export class RowContainerPropertyComponent implements OnInit {
   }
 
   deleteElement() {
-    console.log('row-prop', this.elementObj);
     this.formBuilderService.deleteSelectedOperatorSetter(this.elementObj);
   }
 }

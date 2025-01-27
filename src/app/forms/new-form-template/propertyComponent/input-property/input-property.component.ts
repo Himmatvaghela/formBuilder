@@ -40,7 +40,6 @@ export class InputPropertyComponent implements OnInit {
   }
 
   deleteElement() {
-    console.log('input-prop', this.elementObj);
     this.formBuilderService.deleteSelectedOperatorSetter(this.elementObj);
   }
 }
