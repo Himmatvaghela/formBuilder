@@ -11,7 +11,14 @@
       <li [ngbNavItem]="1" *ngIf="showPropertyPanel">
         <a ngbNavLink>Format</a>
         <ng-template ngbNavContent>
-          <div class="nav_content">
+          <div
+            class="nav_content"
+            *ngIf="
+              !['row', 'button', 'nf_button'].includes(
+                propertyDetailsData?.type
+              )
+            "
+          >
             <div class="ms-3 font_sizing_box">
               <span class="me-2">Font Size :</span>
               <a class="icon me-2"
@@ -52,6 +59,44 @@
               </select>
             </div>
           </div>
+
+          <div class="nav_content" *ngIf="propertyDetailsData?.type == 'row'">
+            <div class="vl_align">
+              <span>Place Elements :</span>
+              <select
+                class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
+                [(ngModel)]="propertyDetailsData.format.direction"
+              >
+                <option value="row">Row Wise</option>
+                <option value="column">Column Wise</option>
+              </select>
+            </div>
+
+            <div class="vl_align">
+              <span>Horizontal Align:</span>
+              <select
+                class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
+                [(ngModel)]="propertyDetailsData.format.horizontal"
+              >
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+                <option value="space-between">Space Between</option>
+              </select>
+            </div>
+
+            <div class="vl_align">
+              <span>Vertical Align:</span>
+              <select
+                class="form-control custom-control h-20px fs-11px fw-500 d-inline-block"
+                [(ngModel)]="propertyDetailsData.format.vertical"
+              >
+                <option value="top">Top</option>
+                <option value="middle">Middle</option>
+                <option value="bottom">Bottom</option>
+              </select>
+            </div>
+          </div>
         </ng-template>
       </li>
       <li [ngbNavItem]="2" *ngIf="showPropertyPanel">
@@ -61,27 +106,37 @@
             <div class="dimension">
               <span>W</span>
               <input
-                type="text"
+                type="number"
                 class="d-inline form-control form-control-sm w-50px h-20px ms-2"
+                [(ngModel)]="elementContainer.width"
               />
               <a class="p-2 lh-10"
                 ><i-feather name="link-2" class="icon_link"></i-feather
               ></a>
               <span>H</span>
               <input
-                type="text"
+                type="number"
                 class="d-inline form-control form-control-sm w-50px h-20px mx-2"
+                [(ngModel)]="elementContainer.height"
               />
             </div>
 
             <div class="styles d-flex">
               <div class="color_wrapper">
                 <span>Background:</span>
-                <input type="color" id="style1" />
+                <input
+                  type="color"
+                  id="style1"
+                  [(ngModel)]="elementContainer.background_color"
+                />
               </div>
               <div class="color_wrapper">
                 <span>Border:</span>
-                <input type="color" id="style1" />
+                <input
+                  type="color"
+                  id="style1"
+                  [(ngModel)]="elementContainer.border_color"
+                />
               </div>
             </div>
 
@@ -92,6 +147,7 @@
                 <input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.padding.top"
                 />
               </div>
               <div class="side_wrapper">
@@ -99,6 +155,7 @@
                 <input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.padding.bottom"
                 />
               </div>
               <div class="side_wrapper">
@@ -106,6 +163,7 @@
                 ><input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.padding.left"
                 />
               </div>
               <div class="side_wrapper">
@@ -113,6 +171,7 @@
                 ><input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.padding.right"
                 />
               </div>
             </div>
@@ -124,6 +183,7 @@
                 <input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.margin.top"
                 />
               </div>
               <div class="side_wrapper">
@@ -131,6 +191,7 @@
                 <input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.margin.bottom"
                 />
               </div>
               <div class="side_wrapper">
@@ -138,6 +199,7 @@
                 ><input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.margin.left"
                 />
               </div>
               <div class="side_wrapper">
@@ -145,6 +207,7 @@
                 ><input
                   type="number"
                   class="d-inline form-control form-control-sm w-35px h-20px ms-2"
+                  [(ngModel)]="elementContainer.margin.right"
                 />
               </div>
             </div>

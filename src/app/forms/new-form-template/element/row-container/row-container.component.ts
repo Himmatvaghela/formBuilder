@@ -3,9 +3,11 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
   Output,
+  SimpleChanges,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -17,7 +19,7 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './row-container.component.html',
   styleUrls: ['./row-container.component.css'],
 })
-export class RowContainerComponent implements OnInit {
+export class RowContainerComponent implements OnInit, OnChanges {
   constructor(
     private formBuilderService: FormBuilderServiceService,
     private changeDetect: ChangeDetectorRef
@@ -31,6 +33,10 @@ export class RowContainerComponent implements OnInit {
   container!: ViewContainerRef;
   isSelected: boolean = false;
   @Output() deleteElement = new EventEmitter();
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('child', this.elementObj);
+  }
 
   ngOnInit(): void {
     // this.initializeView();
@@ -103,5 +109,40 @@ export class RowContainerComponent implements OnInit {
   openPropertyPanel(event: any) {
     event.stopPropagation();
     this.formBuilderService.isPropertyPanelOpenSetter(this.elementObj);
+  }
+
+  returnStyle() {
+    return {
+      'width.px': this.elementObj.container.width,
+      'min-height.px': this.elementObj.container.height,
+      'margin-left': this.elementObj.container.margin.left + 'px',
+      'margin-right': this.elementObj.container.margin.right + 'px',
+      'margin-top': this.elementObj.container.margin.top + 'px',
+      'margin-bottom': this.elementObj.container.margin.bottom + 'px',
+      'padding-left': this.elementObj.container.padding.left + 'px',
+      'padding-right': this.elementObj.container.padding.right + 'px',
+      'padding-top': this.elementObj.container.padding.top + 'px',
+      'padding-bottom': this.elementObj.container.padding.bottom + 'px',
+      'background-color': this.elementObj.container.background_color,
+      'flex-direction': this.elementObj.format.direction,
+      'align-items': this.elementObj.format.vertical,
+      'justify-content': this.elementObj.format.horizontal,
+      'border-top':
+        this.elementObj.container.border_top +
+        'px solid' +
+        this.elementObj.container.border_color,
+      'border-bottom':
+        this.elementObj.container.border_bottom +
+        'px solid' +
+        this.elementObj.container.border_color,
+      'border-left':
+        this.elementObj.container.border_left +
+        'px solid' +
+        this.elementObj.container.border_color,
+      'border-right':
+        this.elementObj.container.border_right +
+        'px solid' +
+        this.elementObj.container.border_color,
+    };
   }
 }

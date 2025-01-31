@@ -2,8 +2,18 @@
   class="container"
   (drop)="drop($event)"
   (dragover)="allowDrop($event)"
+  [ngStyle]="returnStyle()"
   (click)="openPropertyPanel($event)"
-  [ngClass]="{ selected: isSelected }"
+  [ngClass]="{
+    selected: isSelected,
+    'align-top': elementObj.format.vertical === 'top',
+    'align-middle': elementObj.format.vertical === 'middle',
+    'align-bottom': elementObj.format.vertical === 'bottom',
+    'align-left': elementObj.format.horizontal === 'left',
+    'align-center': elementObj.format.horizontal === 'center',
+    'align-right': elementObj.format.horizontal === 'right',
+    'align-space-between': elementObj.format.horizontal === 'space-between'
+  }"
 >
   <ng-container #container></ng-container>
 </div>

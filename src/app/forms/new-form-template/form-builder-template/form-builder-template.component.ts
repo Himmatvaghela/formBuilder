@@ -12,7 +12,6 @@ import { rowContainer } from '../../forms.dto';
 import { FormBuilderServiceService } from '../form-builder-service.service';
 import { NgbNavConfig } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
-// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-builder-template',
@@ -46,6 +45,39 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
   //     height: '50px',
   //   },
   // };
+  format = {
+    case_type: '',
+    font_family: 'Lato',
+    font_size: 12,
+    horizontal_align: '',
+    isBold: false,
+    isItalic: false,
+    isUnderline: false,
+    strikethrough: false,
+    text_align: '',
+    text_color: '',
+    text_outline: '',
+    text_type: '',
+    vertical_align: 'middle',
+  };
+
+  elementContainer: any = {
+    background_color: '',
+    border_color: '',
+    border_radius: '5',
+    padding: {
+      bottom: '',
+      left: '',
+      right: '',
+      top: '',
+    },
+    margin: {
+      bottom: '',
+      left: '',
+      right: '',
+      top: '',
+    },
+  };
 
   ngOnInit(): void {
     this.formBuilderService.isPropertyPanelOpen.subscribe((res: any) => {
@@ -54,7 +86,9 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
         this.showPropertyPanel = true;
         this.selectedPropertyType = res.type;
         this.propertyDetailsData = res;
+        this.format = this.propertyDetailsData.format;
         this.active = 1;
+        console.log(this.propertyDetailsData);
       } else {
         this.formBuilderService.showSelectedOperaterSetter({ elementId: null });
         this.showPropertyPanel = false;
@@ -62,6 +96,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
         this.propertyDetailsData = res;
         this.active = 3;
       }
+      this.elementContainer = this.propertyDetailsData.container;
     });
     this.formBuilderService.customFormData = this.customForm;
     this.formBuilderService.setCustomFormData();
