@@ -4,6 +4,10 @@ import { RowContainerComponent } from './element/row-container/row-container.com
 import { GridData } from '../forms.dto';
 import { Subject } from 'rxjs';
 import { CheckBoxComponent } from './element/check-box/check-box.component';
+import { NfSingleSelectComponent } from './element/nf-single-select/nf-single-select.component';
+import { NfMultiSelectComponent } from './element/nf-multi-select/nf-multi-select.component';
+import { NfRadioComponent } from './element/nf-radio/nf-radio.component';
+import { NfInputNumberComponent } from './element/nf-input-number/nf-input-number.component';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +25,10 @@ export class FormBuilderServiceService {
       component: InputComponent,
     },
     {
+      name: 'nf_input_number',
+      component: NfInputNumberComponent,
+    },
+    {
       name: 'row',
       component: RowContainerComponent,
     },
@@ -28,6 +36,22 @@ export class FormBuilderServiceService {
       name: 'nf_checkbox',
       component: CheckBoxComponent,
     },
+    {
+      name: 'nf_single_select',
+      component: NfSingleSelectComponent,
+    },
+    {
+      name: 'nf_multi_select',
+      component: NfMultiSelectComponent,
+    },
+    {
+      name: 'nf_radio',
+      component: NfRadioComponent,
+    },
+    // {
+    //   name: 'text',
+    //   component: ITextFieldComponent,
+    // },
   ];
 
   findComponent(name: string): any {

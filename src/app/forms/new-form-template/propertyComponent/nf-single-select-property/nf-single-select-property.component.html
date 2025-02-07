@@ -1,0 +1,49 @@
+<div class="property_container">
+  <div class="rows heading_row border-bottom">
+    <span>Properties</span>
+    <i-feather
+      name="trash-2"
+      style="color: red"
+      (click)="deleteElement()"
+    ></i-feather>
+    <i-feather name="x" (click)="onPropertyPanelClose()"></i-feather>
+  </div>
+
+  <div class="rows input_row border-bottom">
+    <label>Element Id</label>
+    <input
+      type="text"
+      class="disable"
+      [value]="elementObj.elementId"
+      disabled
+    />
+  </div>
+  <form [formGroup]="propertyForm" (submit)="saveDetails()">
+    <div class="rows input_row border-bottom">
+      <label>Property Name<sup>*</sup></label>
+      <input
+        type="text"
+        placeholder="Enter Key"
+        formControlName="propertyName"
+      />
+    </div>
+
+    <div class="rows input_row border-bottom">
+      <label>Default View</label>
+      <select formControlName="default_view">
+        <option value="visible">Visible</option>
+        <option value="hidden">Hidden</option>
+      </select>
+    </div>
+
+    <div class="rows btn_row">
+      <button
+        type="submit"
+        class="save_btn"
+        ngClass="{{ propertyForm.invalid ? 'btn_disable' : '' }}"
+      >
+        Save Details
+      </button>
+    </div>
+  </form>
+</div>

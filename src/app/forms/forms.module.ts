@@ -21,6 +21,14 @@ import { AgGridComponent } from '../common/ag-grid/ag-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActionRendererComponent } from './form-builder-dashboard/action-renderer/action-renderer.component';
+import { NfRadioComponent } from './new-form-template/element/nf-radio/nf-radio.component';
+import { NfSingleSelectComponent } from './new-form-template/element/nf-single-select/nf-single-select.component';
+import { NfMultiSelectComponent } from './new-form-template/element/nf-multi-select/nf-multi-select.component';
+import { NfInputNumberComponent } from './new-form-template/element/nf-input-number/nf-input-number.component';
+import { NfInputNumberPropertyComponent } from './new-form-template/propertyComponent/nf-input-number-property/nf-input-number-property.component';
+import { NfSingleSelectPropertyComponent } from './new-form-template/propertyComponent/nf-single-select-property/nf-single-select-property.component';
+import { NfMultiSelectPropertyComponent } from './new-form-template/propertyComponent/nf-multi-select-property/nf-multi-select-property.component';
+import { NfRadioPropertyComponent } from './new-form-template/propertyComponent/nf-radio-property/nf-radio-property.component';
 // import { AppModule } from '../app.module';
 
 @NgModule({
@@ -35,6 +43,14 @@ import { ActionRendererComponent } from './form-builder-dashboard/action-rendere
     FormBuilderDashboardComponent,
     AgGridComponent,
     ActionRendererComponent,
+    NfRadioComponent,
+    NfSingleSelectComponent,
+    NfMultiSelectComponent,
+    NfInputNumberComponent,
+    NfInputNumberPropertyComponent,
+    NfSingleSelectPropertyComponent,
+    NfMultiSelectPropertyComponent,
+    NfRadioPropertyComponent,
   ],
   imports: [
     CommonModule,

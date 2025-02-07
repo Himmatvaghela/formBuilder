@@ -5,6 +5,8 @@
     min-height: 50px;
     background-color: antiquewhite;
     display: flex;
+    grid-gap: 5px;
+    flex-wrap: wrap;
 }
 
 .selected{

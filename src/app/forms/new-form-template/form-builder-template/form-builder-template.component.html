@@ -22,36 +22,64 @@
             <div class="ms-3 font_sizing_box">
               <span class="me-2">Font Size :</span>
               <a class="icon me-2"
-                ><i-feather name="minus" class="top-btn"></i-feather
+                ><i-feather
+                  name="minus"
+                  class="top-btn"
+                  (click)="format.font_size = format.font_size - 1"
+                ></i-feather
               ></a>
               <input
                 type="number"
                 class="d-inline form-control w-50px h-23px"
+                [(ngModel)]="format.font_size"
               />
               <a class="icon ms-2"
-                ><i-feather name="plus" class="top-btn"></i-feather
+                ><i-feather
+                  name="plus"
+                  class="top-btn"
+                  (click)="format.font_size = format.font_size + 1"
+                ></i-feather
               ></a>
             </div>
 
             <div class="mx-2 font_styling">
-              <span class="b fw-bold">B</span>
-              <span class="i fw-bold fst-italic">I</span>
-              <span class="u fw-bold">U</span>
+              <span
+                class="b fw-bold"
+                (click)="format.isBold = !format.isBold"
+                [ngStyle]="{ color: format.isBold ? 'red' : '' }"
+                >B</span
+              >
+              <span
+                class="i fw-bold fst-italic"
+                (click)="format.isItalic = !format.isItalic"
+                [ngStyle]="{ color: format.isItalic ? 'red' : '' }"
+                >I</span
+              >
+              <span
+                class="u fw-bold"
+                (click)="format.isUnderline = !format.isUnderline"
+                [ngStyle]="{ color: format.isUnderline ? 'red' : '' }"
+                >U</span
+              >
             </div>
 
-            <div class="mx-2 ps-3 h_align">
-              <span>Horizontal Align :</span>
-              <span class=""
-                ><i-feather name="align-left" id="1"></i-feather
-              ></span>
-              <span class=""><i-feather name="align-center"></i-feather></span>
-              <span class=""><i-feather name="align-right"></i-feather></span>
+            <div class="vl_align">
+              <span>Horizontal Align:</span>
+              <select
+                class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
+                [(ngModel)]="format.text_align"
+              >
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+              </select>
             </div>
 
             <div class="vl_align">
               <span>Vertical Align:</span>
               <select
                 class="form-control custom-control h-20px fs-11px fw-500 d-inline-block"
+                [(ngModel)]="format.vertical_align"
               >
                 <option value="top">Top</option>
                 <option value="middle">Middle</option>
@@ -76,7 +104,7 @@
               <span>Horizontal Align:</span>
               <select
                 class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
-                [(ngModel)]="propertyDetailsData.format.horizontal"
+                [(ngModel)]="format.horizontal_align"
               >
                 <option value="left">Left</option>
                 <option value="center">Center</option>
@@ -89,7 +117,7 @@
               <span>Vertical Align:</span>
               <select
                 class="form-control custom-control h-20px fs-11px fw-500 d-inline-block"
-                [(ngModel)]="propertyDetailsData.format.vertical"
+                [(ngModel)]="format.vertical_align"
               >
                 <option value="top">Top</option>
                 <option value="middle">Middle</option>
@@ -379,45 +407,6 @@
               <p class="fs-10px ps-3 mb-0">Input Number</p>
             </div>
 
-            <!-- <div class="d-flex justify-content-start align-items-center mb-2" draggable="true" (dragstart)="drag($event, 'ip_address')">
-                    <img src="../../../../assets/images/visual/number-input.svg" />
-                    <p class="fs-10px ps-3 mb-0">Ip Address</p>
-                  </div> -->
-            <div
-              class="d-flex justify-content-start align-items-center mb-2"
-              draggable="true"
-              (dragstart)="drag($event, 'nf_ip_address')"
-            >
-              <img src="../../../../assets/images/visual/textarea.svg" />
-              <p class="fs-10px ps-3 mb-0">Ip Address</p>
-            </div>
-
-            <div
-              class="d-flex justify-content-start align-items-center mb-2"
-              draggable="true"
-              (dragstart)="drag($event, 'nf_ip_address_dropdown')"
-            >
-              <img src="../../../../assets/images/visual/textarea.svg" />
-              <p class="fs-10px ps-3 mb-0">Ip Address Dropdown</p>
-            </div>
-
-            <div
-              class="d-flex justify-content-start align-items-center mb-2"
-              draggable="true"
-              (dragstart)="drag($event, 'nf_text_area')"
-            >
-              <img src="../../../../assets/images/visual/textarea.svg" />
-              <p class="fs-10px ps-3 mb-0">Text Area</p>
-            </div>
-            <div
-              class="d-flex justify-content-start align-items-center mb-2"
-              draggable="true"
-              (dragstart)="drag($event, 'nf_file_upload')"
-            >
-              <img src="../../../../assets/images/visual/file.svg" />
-              <p class="fs-10px ps-3 mb-0">File Upload</p>
-            </div>
-
             <div
               class="d-flex justify-content-start align-items-center mb-2"
               draggable="true"
@@ -452,6 +441,41 @@
             >
               <img src="../../../../assets/images/visual/checkbox.svg" />
               <p class="fs-10px ps-3 mb-0">Checkbox Options</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_ip_address_dropdown')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Ip Address Dropdown</p>
+            </div>
+
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_text_area')"
+            >
+              <img src="../../../../assets/images/visual/textarea.svg" />
+              <p class="fs-10px ps-3 mb-0">Text Area</p>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center mb-2"
+              draggable="true"
+              (dragstart)="drag($event, 'nf_file_upload')"
+            >
+              <img src="../../../../assets/images/visual/file.svg" />
+              <p class="fs-10px ps-3 mb-0">File Upload</p>
             </div>
 
             <div
@@ -794,6 +818,30 @@
         [elementObj]="propertyDetailsData"
         [formData]="customForm"
       ></app-checkbox-property>
+
+      <app-nf-radio-property
+        *ngIf="selectedPropertyType == 'nf_radio'"
+        [elementObj]="propertyDetailsData"
+        [formData]="customForm"
+      ></app-nf-radio-property>
+
+      <app-nf-single-select-property
+        *ngIf="selectedPropertyType == 'nf_single_select'"
+        [elementObj]="propertyDetailsData"
+        [formData]="customForm"
+      ></app-nf-single-select-property>
+
+      <app-nf-multi-select-property
+        *ngIf="selectedPropertyType == 'nf_multi_select'"
+        [elementObj]="propertyDetailsData"
+        [formData]="customForm"
+      ></app-nf-multi-select-property>
+
+      <app-nf-input-number-property
+        *ngIf="selectedPropertyType == 'nf_input_number'"
+        [elementObj]="propertyDetailsData"
+        [formData]="customForm"
+      ></app-nf-input-number-property>
     </div>
   </div>
 </div>

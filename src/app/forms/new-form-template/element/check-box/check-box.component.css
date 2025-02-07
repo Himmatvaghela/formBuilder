@@ -1,5 +1,7 @@
 .selected {
-    border: 1px solid black;
+    box-shadow: 0px 0px 4px #2680eb;
+    border: 1.3px solid #2680eb !important;
+    border-radius: 4px;
 }
 
 .checkbox-container {
@@ -13,6 +15,17 @@
 
 .checkbox_lable{
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
+}
+
+.vertical_end {
+    align-self: end;
+}
+
+.vertical_start {
+    align-self: start;
+}
+
+.vertical_center {
+    align-self: center;
 }

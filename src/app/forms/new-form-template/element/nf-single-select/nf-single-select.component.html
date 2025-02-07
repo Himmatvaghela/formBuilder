@@ -1,0 +1,53 @@
+<div class="single_select_container" [ngStyle]="getElementStyle()">
+  <div
+    class="input-box"
+    (click)="openPropertyPanel($event)"
+    [ngClass]="{ selected: isSelected }"
+    (click)="isDropdownOpen = !isDropdownOpen"
+  >
+    <input
+      type="text"
+      [placeholder]="elementObj.placeholder"
+      [ngStyle]="singleSelectDropdownSettings()"
+      readonly
+      value="{{ selectedValue ? selectedValue : null }}"
+    />
+    <div
+      class="toggle_button"
+      [ngStyle]="{
+        'background-color': this.elementObj.container?.background_color
+      }"
+    >
+      <i-feather
+        class="icon"
+        [ngStyle]="{
+          width: '12px',
+          height: '12px',
+          'background-color': this.elementObj.container?.background_color
+        }"
+        name="chevron-down"
+        *ngIf="!isDropdownOpen"
+      ></i-feather>
+      <i-feather
+        class="icon"
+        [ngStyle]="{
+          width: '12px',
+          height: '12px',
+          'background-color': this.elementObj.container?.background_color
+        }"
+        name="chevron-up"
+        *ngIf="isDropdownOpen"
+      ></i-feather>
+    </div>
+  </div>
+
+  <div
+    class="dropdown"
+    [ngStyle]="singleSelectDropdownSettings()"
+    *ngIf="isDropdownOpen"
+  >
+    <li (click)="selectValue(1, $event)">1</li>
+    <li (click)="selectValue(2, $event)">2</li>
+    <li (click)="selectValue(3, $event)">3</li>
+  </div>
+</div>

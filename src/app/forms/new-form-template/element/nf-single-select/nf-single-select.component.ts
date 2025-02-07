@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
 
 @Component({
-  selector: 'app-check-box',
-  templateUrl: './check-box.component.html',
-  styleUrls: ['./check-box.component.css'],
+  selector: 'app-nf-single-select',
+  templateUrl: './nf-single-select.component.html',
+  styleUrls: ['./nf-single-select.component.css'],
 })
-export class CheckBoxComponent implements OnInit {
+export class NfSingleSelectComponent implements OnInit {
   constructor(private formBuilderService: FormBuilderServiceService) {}
 
   @Input() elementObj: any;
@@ -14,8 +14,10 @@ export class CheckBoxComponent implements OnInit {
   @Input() index!: number;
   @Output() deleteElement = new EventEmitter();
   isSelected: boolean = false;
-
+  isDropdownOpen: boolean = false;
+  selectedValue: any;
   ngOnInit(): void {
+    console.log('input', this.elementObj);
     setTimeout(() => {
       this.formBuilderService.showSelectedOperater.subscribe((res: any) => {
         this.isSelected = false;
@@ -42,20 +44,26 @@ export class CheckBoxComponent implements OnInit {
     this.formBuilderService.isPropertyPanelOpenSetter(this.elementObj);
   }
 
-  returnStyle() {
+  getElementStyle() {
+    return {
+      'padding-top': this.elementObj.container.padding.top + 'px',
+      'padding-bottom': this.elementObj.container.padding.bottom + 'px',
+      'padding-left': this.elementObj.container.padding.left + 'px',
+      'padding-right': this.elementObj.container.padding.right + 'px',
+      color: this.elementObj.format.text_color,
+      'text-align': this.elementObj.format.text_align,
+      'width.px': this.elementObj.container.width,
+      'height.px': this.elementObj.container.height,
+      'margin-top': this.elementObj.container.margin.top + 'px',
+      'margin-bottom': this.elementObj.container.margin.bottom + 'px',
+      'margin-left': this.elementObj.container.margin.left + 'px',
+      'margin-right': this.elementObj.container.margin.right + 'px',
+    };
+  }
+
+  singleSelectDropdownSettings(): any {
     if (this.elementObj) {
       return {
-        width: this.elementObj.container.width + 'px' || '100%',
-        'height.px': this.elementObj.container.height,
-        'margin-left': this.elementObj.container.margin.left + 'px',
-        'margin-right': this.elementObj.container.margin.right + 'px',
-        'margin-top': this.elementObj.container.margin.top + 'px',
-        'margin-bottom': this.elementObj.container.margin.bottom + 'px',
-        'padding-left': this.elementObj.container.padding.left + 'px',
-        'padding-right': this.elementObj.container.padding.right + 'px',
-        'padding-top': this.elementObj.container.padding.top + 'px',
-        'padding-bottom': this.elementObj.container.padding.bottom + 'px',
-        'flex-direction': this.elementObj.format.direction,
         color: this.elementObj.format?.text_color
           ? this.elementObj.format.text_color
           : '#000000',
@@ -73,8 +81,6 @@ export class CheckBoxComponent implements OnInit {
         'font-size': this.elementObj.format?.font_size
           ? this.elementObj.format.font_size + 'px'
           : '12px',
-        'text-shadow':
-          '0px' + ' ' + '-1px' + ' ' + this.elementObj.format?.text_outline,
         'background-color': this.elementObj.container?.background_color
           ? this.elementObj.allow_editing
             ? this.elementObj.container?.background_color
@@ -85,5 +91,10 @@ export class CheckBoxComponent implements OnInit {
       };
     }
     return {};
+  }
+
+  selectValue(val: any, event: any) {
+    event?.stopPropagation();
+    this.selectedValue = val;
   }
 }

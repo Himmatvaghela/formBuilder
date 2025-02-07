@@ -54,7 +54,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
     isItalic: false,
     isUnderline: false,
     strikethrough: false,
-    text_align: '',
+    text_align: 'left',
     text_color: '',
     text_outline: '',
     text_type: '',
@@ -87,6 +87,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
         this.selectedPropertyType = res.type;
         this.propertyDetailsData = res;
         this.format = this.propertyDetailsData.format;
+        this.elementContainer = this.propertyDetailsData.container;
         this.active = 1;
         console.log(this.propertyDetailsData);
       } else {
@@ -96,7 +97,6 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
         this.propertyDetailsData = res;
         this.active = 3;
       }
-      this.elementContainer = this.propertyDetailsData.container;
     });
     this.formBuilderService.customFormData = this.customForm;
     this.formBuilderService.setCustomFormData();

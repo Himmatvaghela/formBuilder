@@ -1,0 +1,82 @@
+<div class="multi_select_container" [ngStyle]="getElementStyle()">
+  <div
+    class="input-box"
+    (click)="openPropertyPanel($event)"
+    [ngClass]="{ selected: isSelected }"
+    (click)="isDropdownOpen = !isDropdownOpen"
+  >
+    <input
+      *ngIf="selectedValue.length < 1"
+      type="text"
+      [placeholder]="elementObj.placeholder"
+      [ngStyle]="singleSelectDropdownSettings()"
+      readonly
+      value="{{ selectedValue ? selectedValue : null }}"
+    />
+
+    <div
+      class="chip_ellipses"
+      *ngIf="selectedValue.length > 0"
+      [ngStyle]="singleSelectDropdownSettings()"
+    >
+      <ng-container *ngFor="let item of selectedValue; let i = index">
+        <span *ngIf="i < 2">
+          {{ item.value }}
+          <a (click)="selectValue(item.id, $event)"
+            ><i-feather
+              class="chip_close"
+              name="x"
+              [ngStyle]="{
+                width: elementObj.format.font_size + 'px',
+                height: elementObj.format.font_size + 'px',
+                cursor: 'pointer'
+              }"
+            ></i-feather
+          ></a>
+        </span>
+      </ng-container>
+      <span *ngIf="selectedValue.length > 2">{{ selectedValue.length }}</span>
+    </div>
+    <div
+      class="toggle_button"
+      [ngStyle]="{
+        'background-color': this.elementObj.container?.background_color
+      }"
+    >
+      <i-feather
+        class="icon"
+        [ngStyle]="{
+          width: '12px',
+          height: '12px',
+          'background-color': this.elementObj.container?.background_color
+        }"
+        name="chevron-down"
+        *ngIf="!isDropdownOpen"
+      ></i-feather>
+      <i-feather
+        class="icon"
+        [ngStyle]="{
+          width: '12px',
+          height: '12px',
+          'background-color': this.elementObj.container?.background_color
+        }"
+        name="chevron-up"
+        *ngIf="isDropdownOpen"
+      ></i-feather>
+    </div>
+  </div>
+
+  <div
+    class="dropdown"
+    [ngStyle]="singleSelectDropdownSettings()"
+    *ngIf="isDropdownOpen"
+  >
+    <li
+      *ngFor="let item of optionList; let i = index"
+      (click)="selectValue(item.id, $event)"
+    >
+      <input type="checkbox" [checked]="item?.isChecked" />
+      {{ item.value }}
+    </li>
+  </div>
+</div>

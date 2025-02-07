@@ -216,10 +216,12 @@ a{
 .font_sizing_box a {
     border: 1px solid black;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .font_sizing_box input{
     width: 3vw;
+    text-align: center;
 }
 
 .font_styling{
@@ -234,6 +236,7 @@ a{
 
 .font_styling span{
     font-size: 20px;
+    cursor: pointer;
 }
 
 .h_align{
@@ -299,6 +302,7 @@ a{
 
 .spacing .side_wrapper input{
     width: 3rem;
+    text-align: center;
 }
 
 .add_row_btn{
@@ -320,4 +324,18 @@ a{
 .add_row_btn:hover{
     color: white !important;
     background-color: #9b60c6;
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

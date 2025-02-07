@@ -95,6 +95,7 @@ export class RowContainerComponent implements OnInit, OnChanges {
     let obj = JSON.parse(event.dataTransfer.getData('type'));
     //event.preventDefault();
     if (obj) {
+      console.log('drop', obj);
       obj.referenceId = this.elementObj.elementId;
       this.elementObj.addedElements.push(obj);
       // this.formBuilderService.setCustomFormData();

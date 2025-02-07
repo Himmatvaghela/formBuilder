@@ -5,17 +5,18 @@
     border-radius: 4px;
 }
 
-.input-box{
+.radio-container {
     width: 40%;
+    height: 20px;
+    background-color: rgb(209, 205, 205);
+    display: flex;
+    align-items: center;
+    grid-gap: 30px;
 }
 
-.input-box input{
-    width: 100%;
-    /* border: none; */
-    outline: none;
-    border-radius: 3px;
-    border: 1px solid grey;
-    
+.radio_lable {
+    display: flex;
+    align-items: center;
 }
 
 .vertical_end {

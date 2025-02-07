@@ -1106,7 +1106,7 @@ export let nf_radio: any = {
   option_value: '',
   reset_editing: true,
   allow_editing: true,
-  options_list: [{ label: 'label' }],
+  options_list: [{ label: 'label' }, { label: 'label2' }],
   key: '',
   placeholder: 'Select',
   mandatory: true,

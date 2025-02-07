@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
 
 @Component({
-  selector: 'app-check-box',
-  templateUrl: './check-box.component.html',
-  styleUrls: ['./check-box.component.css'],
+  selector: 'app-nf-radio',
+  templateUrl: './nf-radio.component.html',
+  styleUrls: ['./nf-radio.component.css'],
 })
-export class CheckBoxComponent implements OnInit {
+export class NfRadioComponent implements OnInit {
   constructor(private formBuilderService: FormBuilderServiceService) {}
 
   @Input() elementObj: any;

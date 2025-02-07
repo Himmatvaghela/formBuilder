@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
+  selector: 'app-nf-input-number',
+  templateUrl: './nf-input-number.component.html',
+  styleUrls: ['./nf-input-number.component.css'],
 })
-export class InputComponent implements OnInit {
+export class NfInputNumberComponent implements OnInit {
   constructor(private formBuilderService: FormBuilderServiceService) {}
 
   @Input() elementObj: any;
