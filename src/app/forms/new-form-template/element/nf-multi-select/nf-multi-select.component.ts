@@ -22,7 +22,6 @@ export class NfMultiSelectComponent implements OnInit {
     { id: 2, value: 'Jagdish' },
   ];
   ngOnInit(): void {
-    console.log('input', this.elementObj);
     setTimeout(() => {
       this.formBuilderService.showSelectedOperater.subscribe((res: any) => {
         this.isSelected = false;
@@ -116,6 +115,5 @@ export class NfMultiSelectComponent implements OnInit {
     } else {
       this.selectedValue.splice(ind, 1);
     }
-    console.log(this.selectedValue);
   }
 }

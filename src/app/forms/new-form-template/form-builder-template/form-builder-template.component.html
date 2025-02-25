@@ -64,7 +64,7 @@
             </div>
 
             <div class="vl_align">
-              <span>Horizontal Align:</span>
+              <span>Text Align:</span>
               <select
                 class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
                 [(ngModel)]="format.text_align"
@@ -104,7 +104,7 @@
               <span>Horizontal Align:</span>
               <select
                 class="form-control custom-control w-100px h-20px fs-11px fw-500 d-inline-block"
-                [(ngModel)]="format.horizontal_align"
+                [(ngModel)]="propertyDetailsData.format.horizontal"
               >
                 <option value="left">Left</option>
                 <option value="center">Center</option>
@@ -117,7 +117,7 @@
               <span>Vertical Align:</span>
               <select
                 class="form-control custom-control h-20px fs-11px fw-500 d-inline-block"
-                [(ngModel)]="format.vertical_align"
+                [(ngModel)]="propertyDetailsData.format.vertical"
               >
                 <option value="top">Top</option>
                 <option value="middle">Middle</option>
@@ -842,6 +842,12 @@
         [elementObj]="propertyDetailsData"
         [formData]="customForm"
       ></app-nf-input-number-property>
+
+      <app-nf-label-property
+        *ngIf="selectedPropertyType == 'nf_label'"
+        [elementObj]="propertyDetailsData"
+        [formData]="customForm"
+      ></app-nf-label-property>
     </div>
   </div>
 </div>

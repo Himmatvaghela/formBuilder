@@ -49,7 +49,7 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
     case_type: '',
     font_family: 'Lato',
     font_size: 12,
-    horizontal_align: '',
+    horizontal_align: 'left',
     isBold: false,
     isItalic: false,
     isUnderline: false,
@@ -89,7 +89,6 @@ export class FormBuilderTemplateComponent implements OnInit, OnChanges {
         this.format = this.propertyDetailsData.format;
         this.elementContainer = this.propertyDetailsData.container;
         this.active = 1;
-        console.log(this.propertyDetailsData);
       } else {
         this.formBuilderService.showSelectedOperaterSetter({ elementId: null });
         this.showPropertyPanel = false;

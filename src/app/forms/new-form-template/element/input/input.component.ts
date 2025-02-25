@@ -15,7 +15,6 @@ export class InputComponent implements OnInit {
   @Output() deleteElement = new EventEmitter();
   isSelected: boolean = false;
   ngOnInit(): void {
-    console.log('input', this.elementObj);
     setTimeout(() => {
       this.formBuilderService.showSelectedOperater.subscribe((res: any) => {
         this.isSelected = false;

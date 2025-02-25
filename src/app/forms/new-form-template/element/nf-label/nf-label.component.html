@@ -1,0 +1,19 @@
+<div
+  class="label-container d-flex"
+  (click)="openPropertyPanel($event)"
+  [ngClass]="{
+    selected: isSelected,
+    vertical_end: elementObj.format.vertical_align === 'bottom',
+    vertical_start: elementObj.format.vertical_align === 'top',
+    vertical_center: elementObj.format.vertical_align === 'middle'
+  }"
+  [ngStyle]="getElementStyle()"
+>
+  <span
+    [ngStyle]="{
+      'text-align': elementObj.format.text_align,
+      'width.px': elementObj.container.width
+    }"
+    >{{ elementObj.labelName || "Label" }}</span
+  >
+</div>

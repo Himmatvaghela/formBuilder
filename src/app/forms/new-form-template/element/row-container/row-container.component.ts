@@ -3,23 +3,19 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
-  OnDestroy,
   OnInit,
   Output,
-  SimpleChanges,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-row-container',
   templateUrl: './row-container.component.html',
   styleUrls: ['./row-container.component.css'],
 })
-export class RowContainerComponent implements OnInit, OnChanges {
+export class RowContainerComponent implements OnInit {
   constructor(
     private formBuilderService: FormBuilderServiceService,
     private changeDetect: ChangeDetectorRef
@@ -33,10 +29,6 @@ export class RowContainerComponent implements OnInit, OnChanges {
   container!: ViewContainerRef;
   isSelected: boolean = false;
   @Output() deleteElement = new EventEmitter();
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('child', this.elementObj);
-  }
 
   ngOnInit(): void {
     // this.initializeView();
@@ -95,7 +87,6 @@ export class RowContainerComponent implements OnInit, OnChanges {
     let obj = JSON.parse(event.dataTransfer.getData('type'));
     //event.preventDefault();
     if (obj) {
-      console.log('drop', obj);
       obj.referenceId = this.elementObj.elementId;
       this.elementObj.addedElements.push(obj);
       // this.formBuilderService.setCustomFormData();

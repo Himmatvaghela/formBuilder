@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilderServiceService } from '../../form-builder-service.service';
 
 @Component({
-  selector: 'app-nf-input-number',
-  templateUrl: './nf-input-number.component.html',
-  styleUrls: ['./nf-input-number.component.css'],
+  selector: 'app-nf-label',
+  templateUrl: './nf-label.component.html',
+  styleUrls: ['./nf-label.component.css'],
 })
-export class NfInputNumberComponent implements OnInit {
+export class NfLabelComponent implements OnInit {
   constructor(private formBuilderService: FormBuilderServiceService) {}
 
   @Input() elementObj: any;
@@ -29,6 +29,9 @@ export class NfInputNumberComponent implements OnInit {
         this.onOperatorDelete();
       }
     });
+    this.elementObj.labelName = this.elementObj.labelName
+      ? this.elementObj.labelName
+      : '';
   }
 
   onOperatorDelete() {
@@ -43,9 +46,7 @@ export class NfInputNumberComponent implements OnInit {
 
   getElementStyle() {
     return {
-      // backgroundColor: this.elementObj.container.background_color,
-      // "border-color": this.elementObj.container.border_color,
-      // "border-radius": this.elementObj.container.border_radius + "px",
+      backgroundColor: this.elementObj.container.background_color,
       'padding-top': this.elementObj.container.padding.top + 'px',
       'padding-bottom': this.elementObj.container.padding.bottom + 'px',
       'padding-left': this.elementObj.container.padding.left + 'px',
@@ -57,6 +58,7 @@ export class NfInputNumberComponent implements OnInit {
       'text-shadow':
         '0px' + ' ' + '-1px' + ' ' + this.elementObj.format.text_outline,
       'width.px': this.elementObj.container.width,
+      'height.px': this.elementObj.container.height,
       'margin-top': this.elementObj.container.margin.top + 'px',
       'margin-bottom': this.elementObj.container.margin.bottom + 'px',
       'margin-left': this.elementObj.container.margin.left + 'px',

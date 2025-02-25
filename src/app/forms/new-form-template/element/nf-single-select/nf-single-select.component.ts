@@ -17,7 +17,6 @@ export class NfSingleSelectComponent implements OnInit {
   isDropdownOpen: boolean = false;
   selectedValue: any;
   ngOnInit(): void {
-    console.log('input', this.elementObj);
     setTimeout(() => {
       this.formBuilderService.showSelectedOperater.subscribe((res: any) => {
         this.isSelected = false;

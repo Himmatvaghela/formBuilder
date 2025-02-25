@@ -29,6 +29,8 @@ import { NfInputNumberPropertyComponent } from './new-form-template/propertyComp
 import { NfSingleSelectPropertyComponent } from './new-form-template/propertyComponent/nf-single-select-property/nf-single-select-property.component';
 import { NfMultiSelectPropertyComponent } from './new-form-template/propertyComponent/nf-multi-select-property/nf-multi-select-property.component';
 import { NfRadioPropertyComponent } from './new-form-template/propertyComponent/nf-radio-property/nf-radio-property.component';
+import { NfLabelComponent } from './new-form-template/element/nf-label/nf-label.component';
+import { NfLabelPropertyComponent } from './new-form-template/propertyComponent/nf-label-property/nf-label-property.component';
 // import { AppModule } from '../app.module';
 
 @NgModule({
@@ -51,6 +53,8 @@ import { NfRadioPropertyComponent } from './new-form-template/propertyComponent/
     NfSingleSelectPropertyComponent,
     NfMultiSelectPropertyComponent,
     NfRadioPropertyComponent,
+    NfLabelComponent,
+    NfLabelPropertyComponent,
   ],
   imports: [
     CommonModule,

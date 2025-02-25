@@ -25,7 +25,7 @@
     height: 100%;
     border: none;
     outline: none;
-    border-radius: 3px;
+    border-radius: 3px 0 0 3px;
     /* border: 1px solid grey; */
 
 }
@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     grid-gap: 5px;
+    border-radius: 3px 0 0 3px;
 }
 
 .input-box .chip_ellipses span{
@@ -51,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
+    border-radius: 0px 3px 3px 0;
 }
 
 .input-box .toggle_button .icon {

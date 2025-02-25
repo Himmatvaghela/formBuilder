@@ -8,6 +8,7 @@ import { NfSingleSelectComponent } from './element/nf-single-select/nf-single-se
 import { NfMultiSelectComponent } from './element/nf-multi-select/nf-multi-select.component';
 import { NfRadioComponent } from './element/nf-radio/nf-radio.component';
 import { NfInputNumberComponent } from './element/nf-input-number/nf-input-number.component';
+import { NfLabelComponent } from './element/nf-label/nf-label.component';
 
 @Injectable({
   providedIn: 'root',
@@ -48,10 +49,10 @@ export class FormBuilderServiceService {
       name: 'nf_radio',
       component: NfRadioComponent,
     },
-    // {
-    //   name: 'text',
-    //   component: ITextFieldComponent,
-    // },
+    {
+      name: 'nf_label',
+      component: NfLabelComponent,
+    },
   ];
 
   findComponent(name: string): any {
